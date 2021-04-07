@@ -1,0 +1,498 @@
+@charset "UTF-8";
+
+@import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css);
+
+#funding_wrap, body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow:auto;
+}
+
+body {
+    overflow-y: scroll;
+    line-height: 1.5em;
+    letter-spacing: -.02em;
+    color: rgba(0, 0, 0, .84);
+    font-size: 15px;
+    font-weight: 400;
+    -webkit-font-smoothing:antialiased;
+    font-family: 'NanumSquare', sans-serif;
+}
+html * {
+    box-sizing: border-box;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+head, link, meta, script, style, title{
+    display: none;
+}
+fieldset {
+    border: none;
+}
+option {
+    font-weight: normal;
+    display: block;
+    white-space: pre;
+    min-height: 1.2em;
+    padding: 0px 2px 1px;
+}
+input[type=text]{
+    word-break: normal;
+}
+em{
+    font-style: normal;
+}
+button{
+    border: none;
+    outline: 0;
+    background: none;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: #000;
+}
+a, a:active, a:hover, a:visited{
+    text-decoration: none;
+    /* color: inherit; */
+}
+[class*=icon-]:before, 
+i.icon:before{
+    display: inline-block;
+    margin-top: -.2em;
+    vertical-align: middle;
+    text-transform: none;
+    line-height: 1;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    /* -moz-osx-font-smoothing: grayscale; */
+    font-style: normal;
+    font-feature-settings: normal;
+    font-variant: normal;
+}
+/* wrap */
+#funding_wrap{
+    height: 100%;
+    overflow: auto;
+    margin: 0;
+    padding: 0;
+}
+.funding_container {
+    /* position: absolute; */
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    /* -webkit-overflow-scrolling: touch; */
+}
+
+.funding_navbar_container {
+    /* display: -ms-flexbox; */
+    display: flex;
+    position: fixed;
+    top: 0;
+    /* -ms-flex-align: center; */
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 1px 0 0 rgba(0,0,0,.1);
+    background-color: #fff;
+    /* padding: 0 30px; */
+    width: 100%;
+    height: 56px;
+}
+.funding_navbar_container .navbar_left {
+    /* -ms-flex: 1 1; */
+    /* flex: 1 1; */
+    color: #44484b;
+    font-weight: 700;
+}
+.funding_navbar_container .navbar_center {
+    /* display: none; */
+}
+.funding_navbar_container .navbar_center span{
+    width: 32px; 
+    height: 32px;
+}
+.center_info {
+    display: inline-block;
+    position: relative;
+    border-radius: 50%;
+    background: url();
+    vertical-align: middle;
+}
+.center_info.my_company {
+    background-image: url();
+}
+.center_info .my_company_img {
+    display: block;
+    transition: opacity .15s ease-out;
+    opacity: 0;
+    border-radius: 50%;
+    background: #fff no-repeat 50%/cover;
+    width: 100%;
+    height: 100%;
+}
+.funding_navbar_container .navbar_button { 
+    /* -ms-flex: 1 1; */
+    flex: 1 1;
+    text-align: right;
+}
+.rwd.button {
+    transition-property: background-color,border-color,color,opacity;
+    transition-duration: .2s;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: 3px;
+    /* background-color: #fff; */
+    cursor: pointer;
+    /* padding: 0 1.41176em; */
+    height: 48px;
+    vertical-align: middle;
+    line-height: 1;
+    color: rgba(0,0,0,.54);
+    font-size: 17px;
+    font-weight: 400;
+    box-sizing: border-box!important;
+    -webkit-appearance: none;
+    display: inline-block;
+    /* padding-top: .07em; */
+    text-decoration: none;
+}
+.rwd.button.less, 
+.rwd.button[class*=-less] {
+    border-width: 0;
+}
+.rwd.button.primary {
+    background-color: #815b9c;
+    color: #fff;
+}
+.rwd.button.primary.active, 
+.rwd.button.primary:focus, 
+.rwd.button.primary:hover {
+    border-color: rgb(100, 44, 139);
+    background-color: rgb(100, 44, 139);
+    color: #fff;
+}
+.rwd.button.less, 
+.rwd.button.less.active, 
+.rwd.button.less:focus, 
+.rwd.button.less:hover, 
+.rwd.button[class*=-less], 
+.rwd.button[class*=-less].active, 
+.rwd.button[class*=-less]:focus, 
+.rwd.button[class*=-less]:hover {
+    background-color: transparent!important;
+    padding: 0;
+}
+.funding_navbar_container .navbar_button.rwd.button {
+    margin-left: -6px;
+    padding-right: 16px;
+    padding-left: 4px;
+    font-size: 18px;
+}
+.funding_navbar_container .exitButton {
+    display: none;
+    font-size: 15px;
+}
+.funding_container .funding_main {
+    padding-top: 56px;
+}
+.funding_main_contents {
+    /* display: -ms-flexbox; */
+    display: flex;
+    /* position: fixed; */
+    top: 0;
+    bottom: 0;
+    left: 0;
+    /* -ms-flex-flow: column; */
+    flex-flow: column;
+    /* transform: translateX(-100%); */
+    /* transition: transform .2s; */
+    background-color: #fff;
+    /* width: 200px; */
+}
+.funding_project_container {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    padding: 32px 24px 24px;
+    overflow: hidden;
+}
+.funding_project_container:after {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -2;
+    background: linear-gradient(118deg,#75d,#31adff);
+    content: '';
+}
+.funding_project_container > a, 
+.funding_project_container > a:active, 
+.funding_project_container > a:hover, 
+.funding_project_container > a:visited {
+    color: #fff;
+}
+.funding_project_container .funding_project_text {
+    display: inline-block;
+    margin-bottom: 8px;
+    border: 1px solid #fff;
+    padding: 0 4px;
+    line-height: 16px;
+    font-size: 10px;
+    box-sizing: border-box;
+}
+.funding_project_container .funding_project_flag {
+    margin-right: 8px;
+}
+.funding_project_container .funding_project_title {
+    margin: 0;
+    max-width: 182px;
+    word-break: break-all;
+    font-size: 17px;
+    font-weight: 700;
+}
+.funding_project_container .funding_project_number {
+    /* display: -ms-flexbox; */
+    display: flex;
+    /* -ms-flex-align: center; */
+    align-items: center;
+    /* -ms-flex-pack: justify; */
+    justify-content: space-between;
+    margin-top: 14px;
+    outline: none;
+    width: 100%;
+    text-align: left;
+    color: #fff;
+    font-size: 13px;
+}
+.funding_project_container .funding_project_number > i {
+    transform: rotate(-90deg);
+    font-size: 24px;
+}
+.icon-leftBox:before, 
+i.icon.leftBox:before, 
+i.wadizicon.wa-leftBox:before {
+    content: '';
+}
+.funding_project_container .funding_project_img {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    bottom: -20px;
+    left: -20px;
+    z-index: -1;
+    background-image: url();
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* -webkit-filter: blur(8px); */
+    filter: blur(8px);
+}
+.side_menuList_wrap {
+    /* -ms-flex: 1 1; */
+    flex: 1 1;
+    padding-bottom: 15px;
+}
+.side_menuList_wrap .side_menuList {
+    height: 8px;
+}
+.side_menu_submenu {
+    background-color: rgba(186,189,192,.1);
+    padding-left: 44px;
+}
+.side_menuList_wrap .side_menuList_nav {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    padding: 16px 30px;
+    /* color: #815b9c; */
+    font-size: 13px;
+    font-weight: 700;
+}
+.side_menuList_wrap .side_menuList_nav .funding_icon {
+    position: absolute;
+    top: 50%;
+    right: 24px;
+    /* transform: rotate(-90deg); */
+    margin-top: -11px;
+    font-size: 24px;
+}
+.side_menuList_wrap .side_menuList_nav .funding_icon.menuList_open {
+    transform: rotate(90deg);
+}
+.side_menuList_wrap .side_menuList_nav.side_menuList_nav_title {
+    color: rgba(0,0,0,.54);
+}
+.side_menuList_wrap .side_menuList_nav .menuList_icon {
+    position: absolute;
+    right: 0;
+    margin-right: 30px;
+}
+.side_menuList_wrap .side_menuList_nav .menuList_text {
+    display: none;
+}
+.side_menu_submenu .side_menu_sublist {
+    color: #44484b;
+}
+.side_menuList_color {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    background-color: hsla(0,0%,100%,.6);
+    width: 100%;
+    height: 100%;
+}
+.other_Contents_Box {
+    position: relative;
+    /* padding: 32px 16px 120px; */
+}
+.step_1day {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    margin-bottom: 24px;
+}
+.step_1day .step_bar {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.step_1day .step_element {
+    -ms-flex: 1 1;
+    flex: 1 1;
+    background-color: #dadce0;
+    height: 8px;
+}
+.step_1day .step_element.step_activation {
+    background-color: #815b9c;
+}
+.step_1day .step_fillUp {
+    margin-top: 30px;
+    padding: 0 30px;
+    text-align: right;
+    line-height: 2;
+    color: #90949c;
+    font-size: 13px;
+}              
+.funding_Intro {
+    padding-top: 30px;
+    line-height: 1.41;
+}
+.funding_Intro .title {
+    margin-bottom: 16px;
+    color: rgba(0,0,0,.84);
+    font-size: 28px;
+    font-weight: 700;
+}
+.funding_Intro .step_element {
+    line-height: 1.41;
+    color: #60656a;
+    font-size: 17px;
+    font-weight: 400;
+}
+.funding_Intro .btn_wrapper {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+.funding_Intro .btn_wrapper button {
+    margin-top: 0;
+    width: 70%;
+}
+@media screen and (min-width: 321px){
+    .funding_main_contents {
+        width: 240px;
+    }
+}
+@media screen and (min-width: 769px){
+    .funding_container {
+        position: static;
+        overflow-y: auto;
+    }
+    .funding_container .funding_main {
+        display: -ms-flexbox;
+        display: flex;
+        height: 100%;
+    }
+    .funding_navbar_container {
+        padding: 0 24px;
+    }
+    .funding_navbar_container .navbar_left {
+        -ms-flex: 1 1;
+        flex: 1 1;
+    }
+    .funding_navbar_container .navbar_center {
+        display: block;
+        -ms-flex: 1 1;
+        flex: 1 1;
+        z-index: 10;
+        text-align: center;
+        line-height: 56px;
+    }
+    .funding_navbar_container .navbar_center .navbar_img {
+        margin-right: 8px;
+    }
+    .funding_navbar_container .navbar_button.rwd.button {
+        display: none;
+    }
+    .funding_navbar_container .exitButton {
+        display: inline-block;
+    }
+    .funding_main_contents {
+        position: relative;
+        transform: none;
+        transition: none;
+        z-index: 0;
+        box-shadow: 1px 0 0 0 rgba(0,0,0,.06);
+        height: 100%;
+    }
+    .side_menuList_wrap {
+        height: auto;
+        overflow-y: hidden;
+    }
+    .other_Contents_Box {
+        padding: 40px 66px;
+    }
+    .funding_container .funding_main .other_Contents {
+        position: relative;
+        -ms-flex: 1 1;
+        flex: 1 1;
+        overflow-x: auto;
+        overflow-y: auto;
+    }
+    .funding_Intro .btn_wrapper button {
+        width: 320px;
+    }
+    .funding_Intro .btn_wrapper {
+        display: block;
+        margin-top: 80px;
+    }
+    .funding_Intro .title {
+        font-size: 36px;
+    }
+}
+@media screen and (min-width: 1097px){
+    .funding_Intro {
+        margin-right: 242px;
+    }
+}
+@media screen and (min-width: 1441px){
+    .funding_Intro {
+        margin-right: 432px;
+    }
+}

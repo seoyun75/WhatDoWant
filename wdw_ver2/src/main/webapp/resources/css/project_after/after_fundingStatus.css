@@ -1,0 +1,127 @@
+.funding_status{
+	width: 80%;
+	height: 100%;
+	margin-left: 100px;
+	border: 1px solid #000;
+}
+.funding_status > span{
+	padding-left: 10px;
+	width: 100%;
+	font-weight: bold;
+	font-size: 20px;
+	height: 30px;
+	line-height: 30px;
+}
+.funding_status_searchFilter{
+	margin: 0 auto;
+	border: 1px solid #000;
+	width: 80%;
+	height: 180px;
+	margin-top: 10px;
+	margin-bottom: 30px;
+}
+.funding_status_searchFilter > span{
+	font-weight: bold;
+	margin-left: 10px;
+}
+#searchFilter_wrapper{
+	width: 100%;
+	margin-top: 10px;
+	font-size: 14px;
+	padding: 0 20px 0 20px;
+}
+.searchFilter_subject{
+	width: 25%;
+	height: 40px;
+	display: inline-block;
+	margin-left: 15px;
+	text-align: center;
+	font-weight: bold;
+}
+.searchFilter_subject + input{
+	width: 60%;
+	height: 40px;
+	border: 1px solid #000;
+}
+.searchFilter_subject + input::placeholder{
+	padding-left: 10px;
+}
+.funding_status_searchFilter .search_btn{
+	width: 50px;
+	height: 30px;
+	border: 1px solid #000;
+	float: right;
+	margin-right: 20px;
+	background-color: #80808075;
+}
+.funding_status_searchResult{
+	margin: 0 auto;
+	border: 1px solid #000;
+	width: 90%;
+	height: 30%;
+	margin-bottom: 40px;
+}
+.funding_status_searchResult > span{
+	font-weight: bold;
+}
+#searchResult_table_wrapper{
+	width: 100%;
+	text-align: center;
+}
+.table{
+	margin-bottom: 0;
+}
+
+th{
+	font-weight: bold;
+	font-size: 14px;
+}
+.table.table-sm td{
+	font-size: 13px;
+	vertical-align: middle;
+}
+#funding_status_page{
+	width: 100%;
+	text-align: center;
+	border-top: 1px solid #000;
+}
+
+.searchResult_sum{
+	margin-top: 8px;
+	display: block;
+	float: right;
+	width: 100%;
+	font-size: 14px;
+}
+.btn-toolbar{
+	justify-content: center;
+}
+.btn-group .btn{
+	color: gray;
+	font-size: small;
+	
+}
+#sum_wrapper{
+	width: 60%;
+	height: 30px;
+	float: right;
+}
+
+.searchResult_sum .first_box {
+	display: inline-block;
+	width: 100px;
+	float: left;
+	font-weight: bold;
+	color: red;
+	padding-left: 10px;
+}
+.first_box.first_box_second{
+	margin-left: 70px;
+	width: 70px;
+}
+.searchResult_sum .second_box {
+	display: inline-block;
+	width: 120px;
+	float: left;
+	text-align: right;
+}

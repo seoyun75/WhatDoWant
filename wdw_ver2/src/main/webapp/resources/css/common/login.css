@@ -1,0 +1,462 @@
+@charset "utf-8";
+
+@import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css);
+
+body {
+    font-family: 'NanumSquare', sans-serif;
+}
+fieldset {
+    border: none;
+}
+#header_wrap{
+    width: 100%;
+}
+#header{
+    width: 1280px;
+    height: 50px;
+    margin: 0 auto;
+}
+#header .left {
+    float: left; 
+    /* padding: 0 0 0 78px; */
+    width: 400px;
+}
+#header a {
+    color:#333;
+}
+#header h1 {
+    float: left; 
+    padding: 0 10px 0 0;
+    height: 40px;
+    width: 100px;
+}
+#header h1 a { 
+    display: block; 
+    width: 90px; 
+    height: 40px;
+    background: url("../../img/common/logo.png") no-repeat; 
+    background-size: 80px;
+    margin: 10px 10px 10px 0;
+    color: transparent;
+ }
+
+#header .close,
+#header .all,
+#header .left > div > div,
+#header h2 { 
+    display: none;
+}
+#header .left > div { 
+    float: left;
+}
+#header .left > div nav li { 
+    float: left; 
+    padding: 0 50px 0 0;
+    width: 70px;
+}
+#header > ul { 
+    float: right; 
+    padding: 5px 40px 0 0;
+}
+#header > ul li { 
+    float: left; 
+    margin-left: -1px;
+    height: 40px;
+}
+#header > ul li:first-child{
+    border: 1px solid #815b9c;
+    border-radius: 5px;
+}
+#header > ul li:first-child:hover{
+    background: #815b9c;
+}
+#header > ul li:first-child a:hover{
+    color: #ffffff;
+}
+#header > ul li a { 
+    display: block; 
+    width: 96px; 
+    height: 38px; 
+    line-height: 38px; 
+    text-align: center; 
+    font-size: 13px; 
+    border-radius: 3px;
+}
+
+#header .left .sub_manu{
+    width: 60px;
+    height: 200px;
+    text-align: center;
+    display: none;
+}
+#header .left li:hover .sub_manu{
+    display: block;
+    z-index: 999;
+    margin-left: -20px;
+    background-color: #fff;
+    width: 95px;
+    position: absolute;
+}
+#header .left > div nav .sub_manu li{
+    clear: both;
+    padding: 0;
+    cursor: pointer;
+    width: 60px;
+    padding-left: 18px;
+}
+#header .left .sub_manu li a{
+    font-size: 15px;
+}
+.nav-item {
+    width: 100px;
+    text-align: center;
+}
+.nav-link{
+    height: 50px;
+    line-height: 30px;
+}
+.dropdown-menu{
+    min-width: 7rem;
+}
+.form-inline{
+    float: right;
+    padding-top: 8px;
+    position: relative;
+}
+.search{
+    position: absolute;
+    right: 0;
+}
+.projec_join {
+    float: right;
+    margin-top: 7px;
+}
+@media screen and (min-width: 480px) and (max-width:768px){
+    #header h1 { 
+        float:none; 
+        position: absolute; 
+        left: 50%; 
+        top:15px; 
+        transform: translateX(-50%) scale(0.6); 
+        padding:0;
+    }
+    #header h1 a{
+        margin: 0;
+    }
+    #header .left { 
+        padding: 20px 0 0 14px;
+    }
+    #header .all { 
+        display: block; 
+        position: relative; 
+        width:32px; 
+        height: 14px; 
+        border-top: 2px solid #333; 
+        border-bottom: 2px solid #333; 
+        color:transparent; 
+        transform: scale(0.8);
+    }
+    #header .all:before { 
+        content: ""; 
+        position: absolute; 
+        left: 0; 
+        top: 50%; 
+        width: 100%; 
+        height: 2px; 
+        background: #fff; 
+        margin-top: -1px;
+    }
+    #header .left > div { 
+        float:none; 
+    }
+    #header > ul { 
+        padding: 33px 17px 0 0;
+    }
+    #header > ul li {
+        display: none;
+    }
+    #header > ul li.join { 
+        display: block;
+    }
+    #header > ul li a {
+        width: 70px;
+    }
+
+    /* 모바일메뉴 */
+    #header .close,
+    #header .all,
+    #header .left > div > div,
+    #header h2 { 
+        display: block;
+    }
+    /* #header .nav {  
+        position: absolute; 
+        left:-120%; 
+        top: 0; 
+        z-index: 101; 
+        transition: left 0.7s; 
+        padding: 15px 24px 15px 22px; 
+        width:calc(100% - 32px); height: 100%; 
+        background: #fff; 
+        box-sizing: border-box;
+    }
+    #header .nav.on { 
+        left: 0;
+    }
+    #header .nav.on nav { 
+        padding: 0 0 24px; 
+        border-top: 1px solid #815b9c;
+    }
+    #header .nav.on nav a { 
+        height: 40px; 
+        line-height: 40px; 
+        color:#111;
+    }
+    #header .nav.on nav a:before { 
+        display: none;
+    }
+    #header .nav.on nav li { 
+        float: none; 
+        border-bottom: 1px solid #815b9c;
+    }
+    #header .nav.on div { 
+        display: flex; 
+        border:1px solid #eee;
+    }
+    #header .nav.on div a:first-child { 
+        border: none;
+    }
+    #header .nav.on div a { 
+        flex:1; 
+        height: 38px; 
+        border-left: 1px solid #eee; 
+        line-height: 38px; 
+        text-align: center; 
+        color:#666; 
+        font-size: 13px; 
+        font-weight: bold;
+    }
+    #header .nav.on .close { 
+        position: absolute; 
+        right: 24px; 
+        top: 24px; 
+        width: 12px; 
+        height: 12px; 
+        color:transparent;
+    }
+    #header .nav.on .close:before { 
+        content: ""; 
+        position: absolute; 
+        left:46%; 
+        top: 0; 
+        width: 1px; 
+        height: 100%; 
+        background: #5a5a5a; 
+        transform: rotate(45deg);
+    }
+    #header .nav.on .close:after { 
+        content: ""; 
+        position: absolute; 
+        right:45%; 
+        top: 0; 
+        width: 1px; 
+        height: 100%; 
+        background: #5a5a5a; 
+        transform: rotate(-45deg);
+    } */
+    #header h2 { 
+        margin: 0 0 75px 0; 
+        width: 132px; 
+        height: 50px; 
+        background: url("img/WDW_logo.png") no-repeat; 
+        background-size: 60px; 
+        color:transparent;
+    }
+    #header .left li:hover .sub_manu{
+        height: 160px;
+    }
+    #header .left li:hover .sub_manu li{
+        border: none;
+    }
+    #header .left li .sub_manu li:hover a{
+        color: #815b9c;
+    }
+    #header > ul li:first-child:hover{
+        background: #815b9c;
+    }
+}
+
+
+@media all and (min-width:768px) and (max-width:1023px) {
+    #header{
+        width: 100%;
+    }
+    #header h1 { 
+        float:none; 
+        position: absolute; 
+        left: 50%; 
+        top:0; 
+        transform: translateX(-50%); 
+        padding:0;
+    }
+    #header .left { 
+        padding: 20px 0 0 38px;
+    }
+    #header .all { 
+        display: block; 
+        position: relative; 
+        width:32px; 
+        height: 14px;
+        border-top: 2px solid rgb(0, 0, 0); 
+        border-bottom: 2px solid rgb(0, 0, 0); 
+        color:transparent;
+    }
+    #header .all:before { 
+        content: ""; 
+        position: absolute; 
+        left: 0; 
+        top: 50%; 
+        width: 100%; 
+        height: 2px; 
+        background: #fff; 
+        margin-top: -1px;
+    }
+    #header .left > div { 
+        float:none; 
+    }
+    #header > ul {
+        padding: 40px 40px 0 0;
+    }
+    #header > ul li a {
+        width: 70px;
+    }
+
+
+    #header .close,
+    #header .all,
+    #header .left > div > div,
+    #header h2 { 
+        display: block;
+    }/* 
+    #header .nav {  
+        position: absolute; 
+        left:-120%; 
+        top: 0; 
+        z-index: 101; 
+        transition: left 0.7s; 
+        padding: 15px 24px 15px 22px; width:calc(100% - 32px); 
+        height: 100%; 
+        background: #fff; 
+        box-sizing: border-box;
+    }
+    #header .nav.on { 
+        left: 0;
+    }
+    #header .nav.on nav { 
+        padding: 0 0 24px; 
+        border-top: 1px solid #815b9c;
+    }
+    #header .nav.on nav a { 
+        height: 40px; 
+        line-height: 40px; 
+        color:#111;
+    }
+    #header .nav.on nav a:before { 
+        display: none;
+    }
+    #header .nav.on nav li { 
+        float: none; 
+        border-bottom: 1px solid #815b9c;
+    }
+    #header .left li:hover .sub_manu{
+        height: 160px;
+    }
+    #header .left li:hover .sub_manu li{
+        border: none;
+    }
+    #header .left li .sub_manu li:hover a{
+        color: #815b9c;
+    }
+    #header .nav.on div { 
+        display: flex; 
+        border:1px solid #333;
+    }
+    #header .nav.on div a:first-child { 
+        border: none;
+    }
+    #header .nav.on div a { 
+        flex:1; 
+        height: 38px; 
+        border-left: 1px solid #333; 
+        line-height: 38px; 
+        text-align: center; 
+        color:#666; 
+        font-size: 13px; 
+        font-weight: bold;
+    }
+    #header .nav.on .close { 
+        position: absolute; 
+        right: 24px; 
+        top: 24px;
+        width: 12px; 
+        height: 12px; 
+        color:transparent;
+    }
+    #header .nav.on .close:before { 
+        content: ""; 
+        position: absolute; 
+        left:46%; 
+        top: 0; 
+        width: 1px; 
+        height: 100%; 
+        background: #5a5a5a; 
+        transform: rotate(45deg);
+    }
+    #header .nav.on .close:after { 
+        content: ""; 
+        position: absolute; 
+        right:45%; 
+        top: 0; 
+        width: 1px; 
+        height: 100%; 
+        background: #5a5a5a; 
+        transform: rotate(-45deg);
+    } */
+    #header h2 { 
+        margin: 0 0 75px 0; 
+        width: 120px; 
+        height: 50px; 
+        background: url("img/WDW_logo.png") no-repeat; 
+        background-size: 90px; 
+        color:transparent;
+    }
+}
+
+
+.btn-outline-primary {
+	color: #815b9c;
+    border-color: #815b9c;
+}
+
+#header > .projec_join > a:nth-child(1) > button:hover {
+	background: #815b9c;
+    border-color: #815b9c;
+}
+
+
+@media all and (min-width:1024px)  and (max-width:1280px) { 
+	#header{
+		padding: 0 ;
+		width: 100%;
+	}
+
+
+}
+
+
+
+
+
+
+
+

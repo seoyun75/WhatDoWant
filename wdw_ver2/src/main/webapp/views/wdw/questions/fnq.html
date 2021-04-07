@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>What do want?</title>
+		<link rel="stylesheet" href="../css/common/bootstrap.css">
+        <link rel="stylesheet" href="../css/common/login.css">
+        <link rel="stylesheet" href="../css/questions/fnq.css" />
+        <link rel="stylesheet" href="../css/common/footer.css">
+        <script src="../js/common/jquery-3.5.1.js"></script>
+        <script src="../js/common/jquery-ui.min.js"></script>
+        <script src="../js/common/bootstrap.js"></script>
+        <script src="../js/common/bootstrap.min.js"></script>
+        <script src="../js/common/bootstrap.bundle.min.js"></script>
+	</head>
+	<body>
+        <div id="header_wrap">
+            <div id = "header">
+                <div class="left">
+                    <h1><a href="../index.html">WDW</a></h1>
+                    <nav class="navbar navbar-expand-lg navbar-light" style="height: 50px;">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+                            <ul class="navbar-nav mr-auto" style="height: 50px;">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="../product_investment/reward_main.html">상품투자 <span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../idea/idea.html">아이디어</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    더보기
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="../aboutus/aboutus.html">회사소개</a>
+                                    <a class="dropdown-item" href="../notice/notice.html">공지사항</a>
+                                    <a class="dropdown-item" href="#">이용가이드</a>
+                                    <!-- <div class="dropdown-divider"></div> -->
+                                    <a class="dropdown-item" href="questions.html">문의사항</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+                <div class = "projec_join">
+                    <a href="../project_up/funding_establishment.html"><button type="button" class="btn btn-outline-primary">프로젝트 등록</button></a>
+                    <a href="../login/login.html"><button type="button" class="btn">로그인</button></a>
+                    <a href="../join/join.html"><button type="button" class="btn">회원가입</button></a>
+                </div>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn search my-2 my-sm-0" type="submit"><img src="../img/common/ico_search.png" alt=""></button>
+                </form>
+            </div>
+        </div>
+		<div id="questions_wrap">
+			<div id="question_wrapper">
+				<div id="banner_wrap">
+					<div class="banner_img">
+						<p class = "banner_title">FnQ</p>
+						<img src="../img/questions/img1.jpg" alt="" />
+					</div>
+				</div>
+				
+				<div id = "question_wrap">
+					<div class = "question_menu">
+						<ul class = "question_menu_list">
+							<li><a href = "questions.html">문의사항</a></li>
+							<li><a href = "fnq.html">FnQ</a></li>
+						</ul>
+					</div>
+					
+					<div id = "question_content">
+						<div class="question_container" id="question_container">
+							<h4 class="sub_strapline">FnQ</h4>
+							<form id="frmSearch">
+								<input type="hidden" name="id">
+								<input type="hidden" name="dispCt" id="dispCt" value="">
+								<input type="hidden" name="page" id="page" value="1">
+								<input type="hidden" name="searchOption" value="0">
+								<input type="hidden" name="searchText" value="">
+							</form>
+							<div class="question_total_search_input search_input_type">
+								<div class="question_inner">
+									<div class="question_row">
+										<select class="question_white" name="searchOption" id="searchOption" title="검색 분류 선택" value="">
+											<option value="0">제목 + 내용</option>
+											<option value="1">제목</option>
+											<option value="2">내용</option>
+										</select>
+										<input type="text" name="searchText" id="searchText" placeholder="검색어를 입력하세요." title="검색어" class="white" value="">
+										<button id="btnSearch" type="button" class="btn_list question_pp">검색</button>
+									</div>
+								</div>
+							</div>
+							<!--Accordion wrapper-->
+                            <div class="accordion md-accordion" id="accordionEx1" role="tablist" aria-multiselectable="true">
+
+                                <!-- Accordion card -->
+                                <div class="card">
+                            
+                                <!-- Card header -->
+                                <div class="card-header" role="tab" id="headingTwo1">
+                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1" href="#collapseTwo1"
+                                    aria-expanded="false" aria-controls="collapseTwo1">
+                                    <h5 class="mb-0">
+                                        Collapsible Group Item #1 <i class="fas fa-angle-down rotate-icon"></i>
+                                    </h5>
+                                    </a>
+                                </div>
+                            
+                                <!-- Card body -->
+                                <div id="collapseTwo1" class="collapse" role="tabpanel" aria-labelledby="headingTwo1"
+                                    data-parent="#accordionEx1">
+                                    <div class="card-body">
+                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
+                                    wolf
+                                    moon
+                                    officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+                                    Brunch
+                                    3
+                                    wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
+                                    shoreditch
+                                    et.
+                                    Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                                    Ad
+                                    vegan
+                                    excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth
+                                    nesciunt
+                                    you probably haven't heard of them accusamus labore sustainable VHS.
+                                    </div>
+                                </div>
+                            
+                                </div>
+                                <!-- Accordion card -->
+                            
+                                <!-- Accordion card -->
+                                <div class="card">
+                            
+                                <!-- Card header -->
+                                <div class="card-header" role="tab" id="headingTwo2">
+                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1" href="#collapseTwo21"
+                                    aria-expanded="false" aria-controls="collapseTwo21">
+                                    <h5 class="mb-0">
+                                        Collapsible Group Item #2 <i class="fas fa-angle-down rotate-icon"></i>
+                                    </h5>
+                                    </a>
+                                </div>
+                            
+                                <!-- Card body -->
+                                <div id="collapseTwo21" class="collapse" role="tabpanel" aria-labelledby="headingTwo21"
+                                    data-parent="#accordionEx1">
+                                    <div class="card-body">
+                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
+                                    wolf
+                                    moon
+                                    officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+                                    Brunch
+                                    3
+                                    wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
+                                    shoreditch
+                                    et.
+                                    Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                                    Ad
+                                    vegan
+                                    excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth
+                                    nesciunt
+                                    you probably haven't heard of them accusamus labore sustainable VHS.
+                                    </div>
+                                </div>
+                            
+                                </div>
+                                <!-- Accordion card -->
+                            
+                                <!-- Accordion card -->
+                                <div class="card">
+                            
+                                <!-- Card header -->
+                                <div class="card-header" role="tab" id="headingThree31">
+                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1" href="#collapseThree31"
+                                    aria-expanded="false" aria-controls="collapseThree31">
+                                    <h5 class="mb-0">
+                                        Collapsible Group Item #3 <i class="fas fa-angle-down rotate-icon"></i>
+                                    </h5>
+                                    </a>
+                                </div>
+                            
+                                <!-- Card body -->
+                                <div id="collapseThree31" class="collapse" role="tabpanel" aria-labelledby="headingThree31"
+                                    data-parent="#accordionEx1">
+                                    <div class="card-body">
+                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
+                                    wolf
+                                    moon
+                                    officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+                                    Brunch
+                                    3
+                                    wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
+                                    shoreditch
+                                    et.
+                                    Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                                    Ad
+                                    vegan
+                                    excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth
+                                    nesciunt
+                                    you probably haven't heard of them accusamus labore sustainable VHS.
+                                    </div>
+                                </div>
+                            
+                                </div>
+                                <!-- Accordion card -->
+                                <div class="card">
+                            
+                                    <!-- Card header -->
+                                    <div class="card-header" role="tab" id="headingFour4">
+                                        <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1" href="#collapseFour41"
+                                        aria-expanded="false" aria-controls="collapseFour41">
+                                        <h5 class="mb-0">
+                                            Collapsible Group Item #3 <i class="fas fa-angle-down rotate-icon"></i>
+                                        </h5>
+                                        </a>
+                                    </div>
+                                
+                                    <!-- Card body -->
+                                    <div id="collapseFour41" class="collapse" role="tabpanel" aria-labelledby="headingFour41"
+                                        data-parent="#accordionEx1">
+                                        <div class="card-body">
+                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
+                                        wolf
+                                        moon
+                                        officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+                                        Brunch
+                                        3
+                                        wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
+                                        shoreditch
+                                        et.
+                                        Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                                        Ad
+                                        vegan
+                                        excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth
+                                        nesciunt
+                                        you probably haven't heard of them accusamus labore sustainable VHS.
+                                        </div>
+                                    </div>
+                                
+                                    </div>
+                                    <!-- Accordion card -->
+                                    <!-- Accordion card -->
+                                <div class="card">
+                            
+                                    <!-- Card header -->
+                                    <div class="card-header" role="tab" id="headingFive5">
+                                        <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1" href="#collapseFive51"
+                                        aria-expanded="false" aria-controls="collapseFive51">
+                                        <h5 class="mb-0">
+                                            Collapsible Group Item #3 <i class="fas fa-angle-down rotate-icon"></i>
+                                        </h5>
+                                        </a>
+                                    </div>
+                                
+                                    <!-- Card body -->
+                                    <div id="collapseFive51" class="collapse" role="tabpanel" aria-labelledby="headingFive51"
+                                        data-parent="#accordionEx1">
+                                        <div class="card-body">
+                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
+                                        wolf
+                                        moon
+                                        officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+                                        Brunch
+                                        3
+                                        wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
+                                        shoreditch
+                                        et.
+                                        Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                                        Ad
+                                        vegan
+                                        excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth
+                                        nesciunt
+                                        you probably haven't heard of them accusamus labore sustainable VHS.
+                                        </div>
+                                    </div>
+                                
+                                    </div>
+                                    <!-- Accordion card -->
+                                    <!-- Accordion card -->
+                                <div class="card">
+                            
+                                    <!-- Card header -->
+                                    <div class="card-header" role="tab" id="headingSix6">
+                                        <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1" href="#collapseSix61"
+                                        aria-expanded="false" aria-controls="collapseSix61">
+                                        <h5 class="mb-0">
+                                            Collapsible Group Item #3 <i class="fas fa-angle-down rotate-icon"></i>
+                                        </h5>
+                                        </a>
+                                    </div>
+                                
+                                    <!-- Card body -->
+                                    <div id="collapseSix61" class="collapse" role="tabpanel" aria-labelledby="headingSix61"
+                                        data-parent="#accordionEx1">
+                                        <div class="card-body">
+                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
+                                        wolf
+                                        moon
+                                        officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+                                        Brunch
+                                        3
+                                        wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
+                                        shoreditch
+                                        et.
+                                        Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                                        Ad
+                                        vegan
+                                        excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth
+                                        nesciunt
+                                        you probably haven't heard of them accusamus labore sustainable VHS.
+                                        </div>
+                                    </div>
+                                
+                                    </div>
+                                    <!-- Accordion card -->
+                                    <!-- Accordion card -->
+                                <div class="card">
+                            
+                                    <!-- Card header -->
+                                    <div class="card-header" role="tab" id="headingSeven7">
+                                        <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1" href="#collapseSeven71"
+                                        aria-expanded="false" aria-controls="collapseSeven71">
+                                        <h5 class="mb-0">
+                                            Collapsible Group Item #3 <i class="fas fa-angle-down rotate-icon"></i>
+                                        </h5>
+                                        </a>
+                                    </div>
+                                
+                                    <!-- Card body -->
+                                    <div id="collapseSeven71" class="collapse" role="tabpanel" aria-labelledby="headingSeven71"
+                                        data-parent="#accordionEx1">
+                                        <div class="card-body">
+                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
+                                        wolf
+                                        moon
+                                        officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+                                        Brunch
+                                        3
+                                        wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
+                                        shoreditch
+                                        et.
+                                        Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                                        Ad
+                                        vegan
+                                        excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth
+                                        nesciunt
+                                        you probably haven't heard of them accusamus labore sustainable VHS.
+                                        </div>
+                                    </div>
+                                
+                                    </div>
+                                    <!-- Accordion card -->
+                                    <!-- Accordion card -->
+                                <div class="card">
+                            
+                                    <!-- Card header -->
+                                    <div class="card-header" role="tab" id="headingEight8">
+                                        <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1" href="#collapseEight81"
+                                        aria-expanded="false" aria-controls="collapseEight81">
+                                        <h5 class="mb-0">
+                                            Collapsible Group Item #3 <i class="fas fa-angle-down rotate-icon"></i>
+                                        </h5>
+                                        </a>
+                                    </div>
+                                
+                                    <!-- Card body -->
+                                    <div id="collapseEight81" class="collapse" role="tabpanel" aria-labelledby="headingEight81"
+                                        data-parent="#accordionEx1">
+                                        <div class="card-body">
+                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
+                                        wolf
+                                        moon
+                                        officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+                                        Brunch
+                                        3
+                                        wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
+                                        shoreditch
+                                        et.
+                                        Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                                        Ad
+                                        vegan
+                                        excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth
+                                        nesciunt
+                                        you probably haven't heard of them accusamus labore sustainable VHS.
+                                        </div>
+                                    </div>
+                                
+                                    </div>
+                                    <!-- Accordion card -->
+                                    <!-- Accordion card -->
+                                <div class="card">
+                            
+                                    <!-- Card header -->
+                                    <div class="card-header" role="tab" id="headingNine9">
+                                        <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1" href="#collapseNine91"
+                                        aria-expanded="false" aria-controls="collapseNine91">
+                                        <h5 class="mb-0">
+                                            Collapsible Group Item #3 <i class="fas fa-angle-down rotate-icon"></i>
+                                        </h5>
+                                        </a>
+                                    </div>
+                                
+                                    <!-- Card body -->
+                                    <div id="collapseNine91" class="collapse" role="tabpanel" aria-labelledby="headingNine91"
+                                        data-parent="#accordionEx1">
+                                        <div class="card-body">
+                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
+                                        wolf
+                                        moon
+                                        officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+                                        Brunch
+                                        3
+                                        wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
+                                        shoreditch
+                                        et.
+                                        Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                                        Ad
+                                        vegan
+                                        excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth
+                                        nesciunt
+                                        you probably haven't heard of them accusamus labore sustainable VHS.
+                                        </div>
+                                    </div>
+                                
+                                    </div>
+                                    <!-- Accordion card -->
+                                    <!-- Accordion card -->
+                                <div class="card">
+                            
+                                    <!-- Card header -->
+                                    <div class="card-header" role="tab" id="headingTen10">
+                                        <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1" href="#collapseTen101"
+                                        aria-expanded="false" aria-controls="collapseTen101">
+                                        <h5 class="mb-0">
+                                            Collapsible Group Item #3 <i class="fas fa-angle-down rotate-icon"></i>
+                                        </h5>
+                                        </a>
+                                    </div>
+                                
+                                    <!-- Card body -->
+                                    <div id="collapseTen101" class="collapse" role="tabpanel" aria-labelledby="headingTen101"
+                                        data-parent="#accordionEx1">
+                                        <div class="card-body">
+                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
+                                        wolf
+                                        moon
+                                        officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+                                        Brunch
+                                        3
+                                        wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
+                                        shoreditch
+                                        et.
+                                        Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                                        Ad
+                                        vegan
+                                        excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth
+                                        nesciunt
+                                        you probably haven't heard of them accusamus labore sustainable VHS.
+                                        </div>
+                                    </div>
+                                
+                                    </div>
+                                    <!-- Accordion card -->
+                            
+                            </div>
+                            <div class="question_Btn">
+								<div class="paging_comm">
+									<script>
+										function moveByPageNum( targetPage, targetGroup ) {
+											var obj;
+								
+											obj = document.getElementById("SearchFrm");
+								
+											obj.currentPage.value = targetPage;
+											obj.currentGroup.value = targetGroup;
+											obj.method = "POST";
+											
+											
+											obj.action = location.pathname + "?lang=" + '';
+											
+											obj.submit();
+										}
+									</script>
+									<span class="inner_paging">
+										<a href="javascript:;" class="btn_paging btn_fst">
+											<span class="ico_corp">맨 처음 페이지로 이동</span>
+										</a>
+										<a href="javascript:;" class="btn_paging btn_prev">
+											<span class="ico_corp">이전 페이지로 이동</span>
+										</a>
+										<span class="screen_out">현재페이지</span>
+										<em class="link_page">1</em>
+										<a href="javascript:moveByPageNum('2', '1');" title="2페이지로 이동 링크" class="link_page">2</a>
+										<a href="javascript:moveByPageNum('3', '1');" title="3페이지로 이동 링크" class="link_page">3</a>
+										<a href="javascript:moveByPageNum('4', '1');" title="4페이지로 이동 링크" class="link_page">4</a>
+										<a href="javascript:moveByPageNum('5', '1');" title="5페이지로 이동 링크" class="link_page">5</a>
+										<a href="javascript:moveByPageNum('6', '1');" title="6페이지로 이동 링크" class="link_page">6</a>
+										<a href="javascript:moveByPageNum('7', '1');" title="7페이지로 이동 링크" class="link_page">7</a>
+										<a href="javascript:moveByPageNum('8', '1');" title="8페이지로 이동 링크" class="link_page">8</a>
+										<a href="javascript:moveByPageNum('9', '1');" title="9페이지로 이동 링크" class="link_page">9</a>
+										<a href="javascript:moveByPageNum('10', '1');" title="10페이지로 이동 링크" class="link_page">10</a>
+										<a class="btn_paging btn_next" href="javascript:moveByPageNum('11', '2');">
+											<span class="ico_corp">다음 페이지로 이동</span>
+										</a>
+										<a class="btn_paging btn_lst" href="javascript:moveByPageNum('17', '2');">
+											<span class="ico_corp">맨 끝 페이지로 이동</span>
+										</a>
+									</span>
+								</div>
+							</div>
+                            <!-- Accordion wrapper -->
+							<div class="question_search">
+								<div class="sch_comm">
+
+									<form method="post" class="sch_form" name="SearchFrm" id="SearchFrm" action="/questions?lang=">
+										<fieldset>
+											<legend class="screen_out">검색어 입력폼</legend>
+			
+											<label for="search_word" class="lab_sch">검색</label>
+											<input type="text" id="search_word" name="searchWord" class="inp_keyword" title="검색어" value="">
+			
+											<button type="submit" class="btn_search"><span class="ico_corp">검색</span></button>
+										</fieldset>
+			
+										<input type="hidden" id="currentPage" name="currentPage" value="1">
+										<input type="hidden" id="currentGroup" name="currentGroup" value="1">
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer class = "footer_wrap">
+			<div class="footer">
+				<div class="footermenu">
+					<div class="footerlist">
+						<ul>
+							<li><a href="#">회원가입약관</a></li>
+							<li><a href="#">서비스이용약관</a></li>
+							<li><a href="#">개인정보처리방침</a></li>
+							<li class = "cl"><a href="#">운영정책</a></li>
+							<li><a href="#">제휴문의</a></li>
+							<li><a href="#">문의사항</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="address">
+					<div class="add_container">
+						<div class="add_container_in footer_container">
+							<div class="add_textr">
+								<span class="footer_title">WDW 대표 고객센터</span>
+								<div class="footer_divide">
+									<span class="dialing">010-0000-0000</span>
+									<span class="division">|</span>
+								</div>
+								<div class="footer_divide">
+									<a class="footer_link" href="#" target="_blank">카카오톡 채널@WDW</a>
+									<span class="division">|</span>
+								</div>
+								<div class="footer_divide">
+									<a class="footer_link" href="mailto:email@naver.com">naver.com</a>
+									<span class="division">|</span>
+								</div>
+								<div class="footer_divide">
+									<span class="block"> W 멤버십 고객센터 0000-0000</span>
+								</div>
+							</div>
+							<div class="footer_section">
+								<div class="footer_inner">
+									<div>
+										<div class="footer_divide">
+											<span>WDW (주)</span>
+											<span class="division">|</span>
+										</div>
+										<div class="footer_divide">
+											<span>대표이사 땡땡땡</span>
+											<span class="division">|</span>
+										</div>
+										<div class="footer_divide">
+											<span>사업자등록번호 000-00-00000</span>
+											<span class="division">|</span>
+										</div>
+										<div class="footer_divide">
+											<span>주소주소주소주소를 입력해주세요주소주소주소주소주먹고싶당주소주</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>

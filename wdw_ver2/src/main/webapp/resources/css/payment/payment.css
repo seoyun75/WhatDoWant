@@ -1,0 +1,265 @@
+* {
+    font-size: 13px;
+    font-family : 'Open Sans', sans-serif;
+    color: #464646;
+}
+
+#wrap{
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* 틀 */
+.form {
+    width: 900px;
+    height: 2350px;
+    margin: 0 auto;
+}
+
+.list {
+    width: 100%;
+    height: 190px;
+}
+
+.list > div {
+    width: 500px;
+    height: 100%;
+    margin: 0 auto;
+    padding-top: 40px;
+}
+
+.list > div div{
+    border: 1px solid #8a8a8a;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    float: left;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 50px;
+    line-height: 100px;
+    font-weight: bold;
+}
+
+.list > div > div:nth-child(1) {
+    background: #815b9c;
+    color: #fff;
+    border: none;
+}
+
+.list > div > div:nth-child(2),
+.list > div > div:nth-child(4) {
+    float: left;
+    text-align: center;
+    border: none;
+}
+
+
+
+.reward_title {
+    width: 50%;
+    height: 30px;
+    float: left;
+}
+
+.reward_title > p:nth-child(1) {
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.notice_view {
+    background: none;
+    float: right;
+    border: none;
+    color: #815b9c;
+    text-align: right;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.notice_view:hover {
+    text-decoration: none;
+    color: #815b9c;
+}
+
+.modal-body {
+    height: 2000px;
+    white-space: pre-line;
+    font-size: 15px;
+    line-height: 28px;
+}
+
+.bold {
+    font-size: 18px;
+}
+
+
+
+
+
+/* 리워드들 */
+
+#accordion{
+    float: left;
+    width: 100%;
+}
+
+.panel-title {
+    background: #f7f7f7;
+    padding: 0 35px;
+}
+
+.panel-title > label {
+    height: 155px;
+}
+
+.panel-title > label > input {
+    width: 20px;
+    height: 20px;
+}
+
+.panel-title > label > div > p {
+    line-height: 20px;
+}
+
+.reward_content {
+    margin-top: 25px;
+}
+
+.panel-body {
+    background: #f7f7f7;
+    height: 85px;
+    padding-left: 20px;
+}
+
+.panel-body > p {
+    font-size: 13px;
+    font-weight: bold;
+    margin-left: 85px;
+}
+
+.panel-body input[type=text] {
+    width: 80px;
+    height: 40px;
+    font-size: 20px;
+    text-align: center;
+    text-indent: 0;
+    margin-top: 10px;
+    margin-left: 85px;
+}
+
+#check1, #check2, #check3, 
+#check4, #check5, #check6,
+#check7, #check8, #check9, #check10 {
+    float: left;
+    margin-right: 50px;
+    margin-top: 65px;
+}
+
+.reward_content {
+    width: 600px;
+    float: left;
+}
+
+.reward_content > p:nth-child(1) {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.reward_content > p:nth-child(2) {
+    font-weight: bold;
+    font-size: 13px;
+    margin: 14px 0 10px 0;
+}
+
+.reward_content > p:nth-child(3) {
+    font-size: 13px;
+    color: #8a8a8a;
+}
+
+.reward_content > p:nth-child(4) {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+
+
+
+/* 후원금 더하기 */
+.sponsor {
+    width: 100%;
+    height: 150px;
+    float: left;
+    font-size: 18px;
+    margin-top: 50px;
+}
+
+.sponsor > h3 {
+    width: 25%;
+    height: 100%;
+    font-weight: bold;
+    float: left;
+}
+
+.sub-text {
+    font-size: 13px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    line-height: 25px;
+}
+
+.pay {
+    float: left;
+}
+
+.pay > input[type=text]{
+    width: 230px;
+    height: 50px;
+    text-align: right;
+    padding-right: 10px;
+}
+
+.pay + p {
+    width: 300px;
+    line-height: 50px;
+    margin-left: 10px;
+    float: left;
+    font-size: 15px;
+}
+
+.total_sponsor {
+    width: 100%;
+    height: 200px;
+    margin: 0 auto;
+    float: left;
+    font-size: 16px;
+    text-align: center;
+}
+
+.total_sponsor > p {
+    font-weight: bold;
+    text-align: center;
+    
+}
+
+.total_sponsor > h6 {
+    font-weight: bold;
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.funding_button {
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    color: #fff;
+    background: #815b9c;
+    margin-top: 20px;
+}
+
+.funding_button:hover {
+    background: #694682;
+}

@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>What do want?</title>
+		<link rel="stylesheet" href="../css/common/bootstrap.css">
+        <link rel="stylesheet" href="../css/common/login.css">
+        <link rel="stylesheet" href="../css/questions/questions.css" />
+        <link rel="stylesheet" href="../css/common/footer.css">
+        <script src="../js/common/jquery-3.5.1.js"></script>
+        <script src="../js/common/jquery-ui.min.js"></script>
+        <script src="../js/common/bootstrap.js"></script>
+        <script src="../js/common/bootstrap.min.js"></script>
+        <script src="../js/common/bootstrap.bundle.min.js"></script>
+	</head>
+	<body>
+        <div id="header_wrap">
+            <div id = "header">
+                <div class="left">
+                    <h1><a href="../index.html">WDW</a></h1>
+                    <nav class="navbar navbar-expand-lg navbar-light" style="height: 50px;">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+                            <ul class="navbar-nav mr-auto" style="height: 50px;">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="../product_investment/reward_main.html">상품투자 <span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../idea/idea.html">아이디어</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    더보기
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="../aboutus/aboutus.html">회사소개</a>
+                                    <a class="dropdown-item" href="../notice/notice.html">공지사항</a>
+                                    <a class="dropdown-item" href="#">이용가이드</a>
+                                    <!-- <div class="dropdown-divider"></div> -->
+                                    <a class="dropdown-item" href="questions.html">문의사항</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+                <div class = "projec_join">
+                    <a href="../project_up/funding_establishment.html"><button type="button" class="btn btn-outline-primary">프로젝트 등록</button></a>
+                    <a href="../login/login.html"><button type="button" class="btn">로그인</button></a>
+                    <a href="../join/join.html"><button type="button" class="btn">회원가입</button></a>
+                </div>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn search my-2 my-sm-0" type="submit"><img src="../img/common/ico_search.png" alt=""></button>
+                </form>
+            </div>
+        </div>
+		<div id="questions_wrap">
+			<div id="question_wrapper">
+				<div id="banner_wrap">
+					<div class="banner_img">
+						<p class = "banner_title">문의사항</p>
+						<img src="../img/questions/img1.jpg" alt="" />
+					</div>
+				</div>
+				
+				<div id = "question_wrap">
+					<div class = "question_menu">
+						<ul class = "question_menu_list">
+							<li><a href = "question.html">문의사항</a></li>
+							<li><a href = "fnq.html">FnQ</a></li>
+						</ul>
+					</div>
+					
+					<div id = "question_content">
+						<div class="question_container" id="question_container">
+							<h4 class="sub_strapline">문의사항</h4>
+							<form id="frmSearch">
+								<input type="hidden" name="id">
+								<input type="hidden" name="dispCt" id="dispCt" value="">
+								<input type="hidden" name="page" id="page" value="1">
+								<input type="hidden" name="searchOption" value="0">
+								<input type="hidden" name="searchText" value="">
+							</form>
+							<div class="question_total_search_input search_input_type">
+								<div class="question_inner">
+									<div class="question_row">
+										<select class="question_white" name="searchOption" id="searchOption" title="검색 분류 선택" value="">
+											<option value="0">제목 + 내용</option>
+											<option value="1">제목</option>
+											<option value="2">내용</option>
+										</select>
+										<input type="text" name="searchText" id="searchText" placeholder="검색어를 입력하세요." title="검색어" class="white" value="">
+										<button id="btnSearch" type="button" class="btn_list question_pp">검색</button>
+									</div>
+								</div>
+							</div>
+							<div class="question_tab_wrap question_tab_type">
+								<div class="question_tab_content">
+									<div class="question_tab_cont on">	
+										<div class="question_inner">				
+											<div class="question_list_table">
+												<div class="question_list_type1 question_type2">
+													<ul></ul>
+													<li class="question_point01">	
+														<div class="question_left">		
+															<div class="question_title question_ellipsis">			
+																<a href="question_detail.html">
+																	<span class="txt_question">문의</span>
+																	<em>&nbsp;문의사항입니다.</em>
+																</a>		
+															</div>		
+															<p class="question_txt question_ellipsis">&nbsp;문의사항입니다. 문의사항입니다 비밀글임 볼 생각 ㄴㄴ</p>	
+														</div>	
+														<div class="question_right">		
+															<span class="question_views">조회수 11,690</span>		
+															<span class="question_date">2020.09.18</span>	
+														</div>
+													</li>
+													<li class="question_point01">	
+														<div class="question_left">		
+															<div class="question_title question_ellipsis">			
+																<a href="question_detail.html">
+																	<span class="txt_question">문의</span>
+																	<em>&nbsp;문의사항입니다.</em>
+																</a>		
+															</div>		
+															<p class="question_txt question_ellipsis">&nbsp;문의사항입니다. 문의사항입니다 비밀글임 볼 생각 ㄴㄴ</p>	
+														</div>	
+														<div class="question_right">		
+															<span class="question_views">조회수 11,690</span>		
+															<span class="question_date">2020.09.18</span>	
+														</div>
+													</li>
+													<li>	
+														<div class="question_left">		
+															<div class="question_title question_ellipsis">			
+																<a href="question_detail.html">
+																	<em>&nbsp;문의사항입니다.</em>
+																</a>		
+															</div>		
+															<p class="question_txt question_ellipsis">&nbsp;문의사항입니다. 문의사항입니다 비밀글임 볼 생각 ㄴㄴ</p>	
+														</div>	
+														<div class="question_right">		
+															<span class="question_views">조회수 11,690</span>		
+															<span class="question_date">2020.09.18</span>	
+														</div>
+													</li>
+													<li>	
+														<div class="question_left">		
+															<div class="question_title question_ellipsis">			
+																<a href="question_detail.html">
+																	<em>&nbsp;문의사항입니다.</em>
+																</a>		
+															</div>		
+															<p class="question_txt question_ellipsis">&nbsp;문의사항입니다. 문의사항입니다 비밀글임 볼 생각 ㄴㄴ</p>	
+														</div>	
+														<div class="question_right">		
+															<span class="question_views">조회수 11,690</span>		
+															<span class="question_date">2020.09.18</span>	
+														</div>
+													</li>
+													<li>	
+														<div class="question_left">		
+															<div class="question_title question_ellipsis">			
+																<a href="question_detail.html">
+																	<em>&nbsp;문의사항입니다.</em>
+																</a>		
+															</div>		
+															<p class="question_txt question_ellipsis">&nbsp;문의사항입니다. 문의사항입니다 비밀글임 볼 생각 ㄴㄴ</p>	
+														</div>	
+														<div class="question_right">		
+															<span class="question_views">조회수 11,690</span>		
+															<span class="question_date">2020.09.18</span>	
+														</div>
+													</li>
+													<li>	
+														<div class="question_left">		
+															<div class="question_title question_ellipsis">			
+																<a href="question_detail.html">
+																	<em>&nbsp;문의사항입니다.</em>
+																</a>		
+															</div>		
+															<p class="question_txt question_ellipsis">&nbsp;문의사항입니다. 문의사항입니다 비밀글임 볼 생각 ㄴㄴ</p>	
+														</div>	
+														<div class="question_right">		
+															<span class="question_views">조회수 11,690</span>		
+															<span class="question_date">2020.09.18</span>	
+														</div>
+													</li>
+													<li>	
+														<div class="question_left">		
+															<div class="question_title question_ellipsis">			
+																<a href="question_detail.html">
+																	<em>&nbsp;문의사항입니다.</em>
+																</a>		
+															</div>		
+															<p class="question_txt question_ellipsis">&nbsp;문의사항입니다. 문의사항입니다 비밀글임 볼 생각 ㄴㄴ</p>	
+														</div>	
+														<div class="question_right">		
+															<span class="question_views">조회수 11,690</span>		
+															<span class="question_date">2020.09.18</span>	
+														</div>
+													</li>
+													<li>	
+														<div class="question_left">		
+															<div class="question_title question_ellipsis">			
+																<a href="question_detail.html">
+																	<em>&nbsp;문의사항입니다.</em>
+																</a>		
+															</div>		
+															<p class="question_txt question_ellipsis">&nbsp;문의사항입니다. 문의사항입니다 비밀글임 볼 생각 ㄴㄴ</p>	
+														</div>	
+														<div class="question_right">		
+															<span class="question_views">조회수 11,690</span>		
+															<span class="question_date">2020.09.18</span>	
+														</div>
+													</li>
+													<li>	
+														<div class="question_left">		
+															<div class="question_title question_ellipsis">			
+																<a href="question_detail.html">
+																	<em>&nbsp;문의사항입니다.</em>
+																</a>		
+															</div>		
+															<p class="question_txt question_ellipsis">&nbsp;문의사항입니다. 문의사항입니다 비밀글임 볼 생각 ㄴㄴ</p>	
+														</div>	
+														<div class="question_right">		
+															<span class="question_views">조회수 11,690</span>		
+															<span class="question_date">2020.09.18</span>	
+														</div>
+													</li>
+													<li>	
+														<div class="question_left">		
+															<div class="question_title question_ellipsis">			
+																<a href="question_detail.html">
+																	<em>&nbsp;문의사항입니다.</em>
+																</a>		
+															</div>		
+															<p class="question_txt question_ellipsis">&nbsp;문의사항입니다. 문의사항입니다 비밀글임 볼 생각 ㄴㄴ</p>	
+														</div>	
+														<div class="question_right">		
+															<span class="question_views">조회수 11,690</span>		
+															<span class="question_date">2020.09.18</span>	
+														</div>
+													</li>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="btn_wrap_type1 btn_event">
+									<a href="quest.html"><button type="button" class="btn_list evt_white" onclick="">글쓰기</button></a>
+									<a href="quest.html"><button type="button" class="btn_list evt_white" onclick="">수정하기</button></a>
+								</div>
+							<div class="question_Btn">
+								<div class="paging_comm">
+									<script>
+										function moveByPageNum( targetPage, targetGroup ) {
+											var obj;
+								
+											obj = document.getElementById("SearchFrm");
+								
+											obj.currentPage.value = targetPage;
+											obj.currentGroup.value = targetGroup;
+											obj.method = "POST";
+											
+											
+											obj.action = location.pathname + "?lang=" + '';
+											
+											obj.submit();
+										}
+									</script>
+									<span class="inner_paging">
+										<a href="javascript:;" class="btn_paging btn_fst">
+											<span class="ico_corp">맨 처음 페이지로 이동</span>
+										</a>
+										<a href="javascript:;" class="btn_paging btn_prev">
+											<span class="ico_corp">이전 페이지로 이동</span>
+										</a>
+										<span class="screen_out">현재페이지</span>
+										<em class="link_page">1</em>
+										<a href="javascript:moveByPageNum('2', '1');" title="2페이지로 이동 링크" class="link_page">2</a>
+										<a href="javascript:moveByPageNum('3', '1');" title="3페이지로 이동 링크" class="link_page">3</a>
+										<a href="javascript:moveByPageNum('4', '1');" title="4페이지로 이동 링크" class="link_page">4</a>
+										<a href="javascript:moveByPageNum('5', '1');" title="5페이지로 이동 링크" class="link_page">5</a>
+										<a href="javascript:moveByPageNum('6', '1');" title="6페이지로 이동 링크" class="link_page">6</a>
+										<a href="javascript:moveByPageNum('7', '1');" title="7페이지로 이동 링크" class="link_page">7</a>
+										<a href="javascript:moveByPageNum('8', '1');" title="8페이지로 이동 링크" class="link_page">8</a>
+										<a href="javascript:moveByPageNum('9', '1');" title="9페이지로 이동 링크" class="link_page">9</a>
+										<a href="javascript:moveByPageNum('10', '1');" title="10페이지로 이동 링크" class="link_page">10</a>
+										<a class="btn_paging btn_next" href="javascript:moveByPageNum('11', '2');">
+											<span class="ico_corp">다음 페이지로 이동</span>
+										</a>
+										<a class="btn_paging btn_lst" href="javascript:moveByPageNum('17', '2');">
+											<span class="ico_corp">맨 끝 페이지로 이동</span>
+										</a>
+									</span>
+								</div>
+							</div>
+							<div class="question_search">
+								<div class="sch_comm">
+
+									<form method="post" class="sch_form" name="SearchFrm" id="SearchFrm" action="/questions?lang=">
+										<fieldset>
+											<legend class="screen_out">검색어 입력폼</legend>
+			
+											<label for="search_word" class="lab_sch">검색</label>
+											<input type="text" id="search_word" name="searchWord" class="inp_keyword" title="검색어" value="">
+			
+											<button type="submit" class="btn_search"><span class="ico_corp">검색</span></button>
+										</fieldset>
+			
+										<input type="hidden" id="currentPage" name="currentPage" value="1">
+										<input type="hidden" id="currentGroup" name="currentGroup" value="1">
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer class = "footer_wrap">
+			<div class="footer">
+				<div class="footermenu">
+					<div class="footerlist">
+						<ul>
+							<li><a href="#">회원가입약관</a></li>
+							<li><a href="#">서비스이용약관</a></li>
+							<li><a href="#">개인정보처리방침</a></li>
+							<li class = "cl"><a href="#">운영정책</a></li>
+							<li><a href="#">제휴문의</a></li>
+							<li><a href="#">문의사항</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="address">
+					<div class="add_container">
+						<div class="add_container_in footer_container">
+							<div class="add_textr">
+								<span class="footer_title">WDW 대표 고객센터</span>
+								<div class="footer_divide">
+									<span class="dialing">010-0000-0000</span>
+									<span class="division">|</span>
+								</div>
+								<div class="footer_divide">
+									<a class="footer_link" href="#" target="_blank">카카오톡 채널@WDW</a>
+									<span class="division">|</span>
+								</div>
+								<div class="footer_divide">
+									<a class="footer_link" href="mailto:email@naver.com">naver.com</a>
+									<span class="division">|</span>
+								</div>
+								<div class="footer_divide">
+									<span class="block"> W 멤버십 고객센터 0000-0000</span>
+								</div>
+							</div>
+							<div class="footer_section">
+								<div class="footer_inner">
+									<div>
+										<div class="footer_divide">
+											<span>WDW (주)</span>
+											<span class="division">|</span>
+										</div>
+										<div class="footer_divide">
+											<span>대표이사 땡땡땡</span>
+											<span class="division">|</span>
+										</div>
+										<div class="footer_divide">
+											<span>사업자등록번호 000-00-00000</span>
+											<span class="division">|</span>
+										</div>
+										<div class="footer_divide">
+											<span>주소주소주소주소를 입력해주세요주소주소주소주소주먹고싶당주소주</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>

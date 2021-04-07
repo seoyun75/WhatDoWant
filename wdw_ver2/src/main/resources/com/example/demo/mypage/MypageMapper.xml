@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE
+ mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+ "https://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.example.demo.mypage.MypageMapper">
+<!--actor-->	
+   <select id="user" resultType="memberVO"  parameterType="String">
+      select * from member where member_id = #{id, jdbcType=VARCHAR}
+   </select>
+
+	<update id="infoModify" parameterType="MemberVO"> 
+		update member set member_pname = #{member_pname, jdbcType=VARCHAR} , member_address =#{member_address, jdbcType=VARCHAR}
+		where member_id = #{member_id, jdbcType=VARCHAR}
+	</update>
+	<update id="pwModify" parameterType="memberVO">
+		update member set member_pw = #{member_pw}
+		where member_id = #{member_id, jdbcType=VARCHAR}
+	</update>
+	<delete id="deleteAccount" parameterType="memberVO">
+		delete from account where account_member_no= #{member_no}
+	</delete>
+	<!-- <delete id="deleteCard" parameterType="memberVO">
+		delete from card where card_member_no= #{member_no}
+	</delete> -->
+
+	<delete id="deleteUser" parameterType="memberVO">
+		delete from member where member_id= #{member_id}
+	</delete>
+	
+	
+<!-- activity -->	
+	<select id="shopHistory" resultType="shoppingVO" parameterType="String">
+		 SELECT * FROM 
+		(SELECT DISTINCT p2.*, p3.PRO_CATE, p3.PRO_STARTDATE, p3.PRO_ENDATE, p3.PRO_STATE, p3.PRO_CONTENT, p3.PRO_TITLE FROM PURHISTORY p2 , PROJECT p3 WHERE p2.PURHISTORY_CODE = p3.PRO_CODE ) v1
+		WHERE PURHISTORY_BUYER = #{id} ORDER BY v1.PURHISTORY_FUNDING_DATE DESC
+	</select>
+	
+	<select id="project" resultType="projectVO" parameterType="String">
+		select * from project where pro_writter = #{id}
+	</select>
+	
+	<!-- 상품상세 -->
+	<select id="detailPurhistory" resultType="purhistoryVO" parameterType="hashmap">
+		select * from purhistory 
+		where purhistory_code = #{code} 
+		AND PURHISTORY_BUYER = #{id}
+		AND PURHISTORY_FUNDING_DATE = #{funding_date}
+	</select>
+	<select id="detailProject" resultType="projectVO" parameterType="purhistoryVO">
+		select * from project where pro_code = #{purhistory_code}
+	</select>
+	<select id="detailReward" resultType="reward_dsnVO" parameterType="purhistoryVO">
+		select * from pu_reward_dsn where pu_reward_dsn_rew_name = #{purhistory_reward} and pu_reward_dsn_pro_no = #{purhistory_code}
+	</select>
+	<select id="detailBusiness" resultType="businessVO" parameterType="projectVO">
+		select * from business where business_license = #{pro_license}
+	</select>
+	
+	
+	<!-- 프로젝트 삭제 -->
+	<delete id="deleteProject" parameterType="map">
+		delete from project where pro_writter= #{member_id} and pro_code = #{pro_code}
+	</delete>
+	<delete id="deletePuBasicInfo" parameterType="map">
+		delete from pu_basic_info where pu_basic_info_pro_no= #{pro_code} and pu_basic_info_mem_code = #{member_no}
+	</delete>
+	<delete id="deletePuBasicReq" parameterType="map">
+		delete from pu_basic_req where pu_basic_req_pro_no= #{pro_code} and pu_basic_req_mem_code = #{member_no}
+	</delete>
+	<delete id="deletePuMakerInfo" parameterType="map">
+		delete from pu_maker_info where pu_maker_info_pro_no= #{pro_code} and pu_maker_info_mem_code = #{member_no}
+	</delete>
+	<delete id="deletePuRewardDes" parameterType="map">
+		delete from pu_reward_dsn where pu_reward_dsn_pro_no= #{pro_code} and pu_reward_dsn_mem_code = #{member_no}
+	</delete>
+	<delete id="deletePuRiskpolicy" parameterType="map">
+		delete from pu_riskpolicy where pu_riskpolicy_pro_no= #{pro_code} and pu_riskpolicy_mem_code = #{member_no}
+	</delete>
+	<delete id="deletePuStory" parameterType="map">
+		delete from pu_story where pu_story_pro_no= #{pro_code} and pu_story_mem_code = #{member_no}
+	</delete>
+	
+	
+	
+	
+<!--wallet-->
+	<select id="accountList" resultType="accountVO" parameterType="java.lang.Integer">
+		select * from account where account_member_no = #{member_no}
+	</select> 
+	<insert id="InsertAccount" parameterType="accountVO">
+		insert into account values (#{account_number}, #{bank}, #{account_member_no})
+	</insert>
+	
+	<select id="useMoney" resultType="purhistoryVO" parameterType="String">
+		SELECT * FROM PURHISTORY WHERE PURHISTORY_BUYER =#{id} AND PURHISTORY_PAYSTATE ='결제완료' ORDER BY PURHISTORY_FUNDING_DATE
+	</select>	
+	<select id="incomeMoney" resultType="projectVO" parameterType="String">
+		SELECT PRO_TITLE, PRO_NOW_AMOUNT, PRO_TARGET_AMOUNT FROM PROJECT WHERE PRO_WRITTER =#{id} AND PRO_NOW_AMOUNT > PRO_TARGET_AMOUNT AND PRO_STATE ='종료'
+	</select>
+	
+	
+<!-- qna -->	
+	<sql id="noMax">
+		(select max(si_no)+1 from site)
+	</sql>
+	<insert id="qnaInsert" parameterType="siteVO">
+		<selectKey keyProperty="si_no" resultType="java.lang.Integer" order="BEFORE">
+			<include refid="noMax"/>
+		</selectKey>
+		insert into site (si_no, si_cate, si_title, si_content, si_writer, si_regdate)
+		values
+		(#{si_no}, #{si_cate,jdbcType=VARCHAR},#{si_title,jdbcType=VARCHAR},#{si_content,jdbcType=VARCHAR}, #{si_writer,jdbcType=VARCHAR}, sysdate)
+	</insert> 
+	<delete id="accountDelete" parameterType="String">
+		delete from account where account_number = #{acc_num}
+	</delete>
+	
+	
+	<update id="qnaModify" parameterType="siteVO">
+		update site set si_title = #{si_title}, si_content = #{si_content} where si_no = #{si_no}
+	</update>
+	
+	<select id="qnaList" resultType="siteVO" parameterType="memberVO">
+		select * from site where si_writer = #{member_id} and si_cate like 'QnA%'
+	</select>
+	<select id="projQnAList" resultType="project_boardVO" parameterType="memberVO">
+		SELECT * FROM project_board WHERE PROJECT_BOARD_WRITER =#{member_id} AND PROJECT_BOARD_CATE = ANY ('문의','답변')
+	</select>
+	<select id="QnAAnswar" resultType="siteVO" parameterType="java.lang.Integer">
+		SELECT * FROM SITE WHERE SI_GID = #{si_no} AND SI_SEQ != 0
+	</select>
+	<select id="checkAnswar" resultType="int" parameterType="java.lang.Integer">
+		SELECT count(si_no) FROM SITE WHERE SI_GID = #{si_no} AND SI_SEQ != 0
+	</select>
+
+	
+	<select id="qnaDetail" resultType="siteVO" parameterType="java.lang.Integer">
+		select * from site where si_no = #{si_no}
+	</select>
+	
+	<delete id = "qnaDelete" parameterType="java.lang.Integer"> 
+		delete from site where si_no = #{si_no}
+	</delete>
+</mapper> 	

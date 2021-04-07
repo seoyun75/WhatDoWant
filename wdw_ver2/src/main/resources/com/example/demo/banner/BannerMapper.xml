@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace = "com.example.demo.banner.BannerMapper">
+
+	<!-- 첫번째 배너 추출 -->
+	<select id="firstBanner" parameterType="bannerVO" resultType="bannerVO">
+		select * from banner where ban_location = '메인' and ban_no = 1
+	</select>
+
+
+	<!-- foreach문에서 돌릴 알고리즘 -->
+	<select id="mainBanner" parameterType="bannerVO" resultType="bannerVO">
+		SELECT * FROM banner where ban_location = '메인'
+	</select>
+	
+ 	<sql id="noMax">
+      (select max(ban_no)+1 from BANNER)
+   	</sql>
+	
+	
+	<insert id="bannerInsert" parameterType="bannerVO">
+	<selectKey keyProperty="ban_no" resultType="java.lang.Integer" order="BEFORE">
+         <include refid="noMax"/>
+      </selectKey>
+		insert into banner (ban_no,ban_location,ban_subject,ban_main_img,ban_url)
+		 values
+		(#{ban_no},#{ban_location},#{ban_subject},#{ban_main_img},#{ban_url})
+	</insert>	
+	
+   <delete id="bannerDelete" parameterType="bannerVO">
+   		delete from banner where ban_no = #{ban_no}
+   </delete>
+   
+   <select id="detail" resultType="bannerVO" parameterType="bannerVO">
+		SELECT * FROM BANNER where ban_no = #{ban_no}
+	</select>
+	
+</mapper>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"https://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.example.demo.project_after.Project_afterMapper">
+	<select id="deliveryList" resultType="purhistoryVO" parameterType="java.lang.Integer">
+		select * from purhistory where purhistory_code = #{pro_code}
+	</select>
+	<update id="sendDelivery" parameterType="hashmap">
+		update purhistory set purhistory_delivery=#{delivery} 
+		where purhistory_buyer=#{send} and 
+		purhistory_funding_date= ( select TO_DATE(#{funding_date},'yyyyMMddHH24miss') from dual)
+	</update>
+	
+	<!-- 구매리스트 목록 -->
+	<select id="purhislist" parameterType="projectVO" resultType="purhistoryVO">
+		select * from purhistory where purhistory_code = #{pro_code}
+	</select>
+	
+	<!-- 구매자 이름 추출 -->
+	<select id="purname" parameterType="purhistoryVO" resultType="String">
+		select member_pname from member where member_id = #{purhistory_buyer}
+	</select>
+	
+	<select id="procode" parameterType="String" resultType="java.lang.Integer">
+		select pro_code from project where pro_writter = #{id} 
+	</select>
+	
+	<select id="inquiryList" parameterType="projectVO" resultType="project_boardVO">
+		select * from project_board 
+		where project_board_pro_no = #{pro_code}
+			and project_board_cate = '문의'
+		order by project_board_pro_no desc
+	</select>
+	
+	<insert id="inquiry_answer" parameterType="project_boardVO">
+		insert into project_board
+		(project_board_no, project_board_pro_no, project_board_regdate, project_board_cate, project_board_title, project_board_content,
+		project_board_writer)
+		values
+		(#{project_board_no}+1, #{project_board_pro_no}, sysdate, #{project_board_cate}, #{project_board_title}, #{project_board_content}, #{project_board_writer}) 
+	</insert>
+	
+	<!-- 문의하기 작성자 추출 -->
+	<select id="inquirywriter" parameterType="project_boardVO" resultType="String">
+		select project_board_writer from project_board where project_board_cate = '문의' and project_board_no = #{project_board_no} 
+		and project_board_pro_no = #{project_board_pro_no}
+	</select>
+	
+	<!-- 게시글 번호 최대값 추출 -->
+	<select id="getmaxno" resultType="java.lang.Integer" >
+		select max(project_board_no) from project_board
+	</select>
+		<!--프로젝트 진행상황 리스트 뽑기  -->
+	<select id="proBoardList" parameterType="projectVO" resultType="project_boardVO">
+		SELECT * FROM PROJECT_BOARD WHERE PROJECT_BOARD_CATE = '진행과정' AND PROJECT_BOARD_PRO_NO = #{pro_code} ORDER BY PROJECT_BOARD_REGDATE DESC 
+	</select>
+		<!--프로젝트 진행상황 상세뽑기  -->
+	<select id="BoardDetail" parameterType="project_boardVO" resultType="project_boardVO">
+		SELECT * FROM PROJECT_BOARD WHERE PROJECT_BOARD_CATE = '진행과정' AND PROJECT_BOARD_NO = #{project_board_no} 
+	</select>
+	
+	<!-- 프로젝트 진행상황 등록 -->
+	<insert id="progressInsert" parameterType="project_boardVO">
+		insert into project_board
+		(project_board_no, project_board_pro_no, project_board_regdate, project_board_cate, project_board_title, project_board_content,
+		project_board_writer,project_board_img)
+		values
+		(#{project_board_no}+1, #{project_board_pro_no}, sysdate, '진행과정', #{project_board_title}, #{project_board_content}, #{project_board_writer}, #{project_board_img}) 
+	</insert>
+	
+	<delete id="progressDelete" parameterType="project_boardVO">
+   		delete from project_board where project_board_no = #{project_board_no}
+   </delete>
+	
+</mapper>

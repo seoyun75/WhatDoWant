@@ -1,0 +1,99 @@
+* {
+    font-size: 13px;
+    font-family : 'Open Sans', sans-serif;
+    color: #464646;
+}
+
+#wrap{
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* 틀 */
+.form {
+    width: 900px;
+    height: 700px;
+    margin: 0 auto;
+}
+
+.list {
+    width: 100%;
+    height: 190px;
+}
+
+.list > div {
+    width: 500px;
+    height: 100%;
+    margin: 0 auto;
+    padding-top: 40px;
+}
+
+.list > div div{
+    border: 1px solid #8a8a8a;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    float: left;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 50px;
+    line-height: 100px;
+    font-weight: bold;
+}
+
+.list > div > div:nth-child(5) {
+    background: #815b9c;
+    color: #fff;
+    border: none;
+}
+
+.list > div > div:nth-child(2),
+.list > div > div:nth-child(4) {
+    float: left;
+    text-align: center;
+    border: none;
+}
+
+
+.success {
+    width: 100%;
+    height: 200px;
+    border: 1px solid #815b9c;
+    border-radius: 5px;
+}
+
+.success > p {
+    font-size: 27px;
+    text-align: center;
+    white-space: pre-line;
+    line-height: 40px;
+    color: #815b9c;
+    margin-top: 60px;
+}
+
+
+
+.total_sponsor {
+    width: 100%;
+    height: 200px;
+    margin: 50px auto;
+    float: left;
+    font-size: 16px;
+    text-align: center;
+}
+
+.funding_button {
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    color: #fff;
+    background: #815b9c;
+    margin-top: 20px;
+}
+
+.funding_button:hover {
+    background: #694682;
+}

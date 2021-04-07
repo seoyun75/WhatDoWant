@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"https://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.example.demo.product.ProjectMapper">
+	<select id="list" resultType="projectVO">
+		select * from project
+	</select> 
+	
+	<select id="listSch" resultType="projectVO" parameterType="projectVO">
+		<!-- select * from board where title like '%'||#{title}||'%' -->
+		<![CDATA[
+		select * from project 
+		where pro_cate like '%'||#{pro_cate}||'%' and pro_state like '%'||#{pro_state}||'%' and to_char(pro_endate,'yyyy-MM-dd') >= to_char(sysdate,'yyyy-MM-dd')
+		]]> 
+	</select>
+	<select id="dday" resultType="String" parameterType="projectVO">
+		SELECT PRO_ENDATE - SYSDATE FROM PROJECT WHERE PRO_CODE  = #{pro_code}
+	</select>
+	
+	<select id="prodday" resultType="Basic_infoVO" parameterType="projectVO">
+		select * from project, pu_basic_info
+		where pro_cate like '%'||#{pro_cate}||'%' and pro_state like '%'||#{pro_state}||'%' and pu_basic_info_pro_no = pro_code
+	</select>
+	
+	<!--<select id="listType" resultType="projectVO" parameterType="projectVO">-->
+		<!--select * from project 
+		where pro_state like '%'||#{pro_state}||'%'
+	</select>-->
+
+	
+	<!--<select id="detail" resultType="projectVO" parameterType="projectVO">-->
+		<!--select * from project where pro_code = #{pro_code} and pro_cate = #{pro_cate} and pro_state = #{pro_state}
+		
+	</select>-->
+	<!--
+	<select id="detail" resultType="ViewsVO" parameterType="ViewsVO">-->
+		<!--select * from project, pu_basic_info, pu_story, pu_reward_dsn, pu_riskpolicy, pu_maker_info 
+		where pro_code = #{pro_code} 
+		and pu_basic_info_mem_code = #{pro_code} 
+		and story_code = #{pro_code} 
+		and PU_MAKER_INFO_MEM_CODE = #{pro_code} 
+		and PU_RISKPOLICY_MEM_CODE = #{pro_code} 
+		and PU_REWARD_DSN_MEM_CODE = #{pro_code} 
+		and pro_cate = #{pro_cate} 
+		and pro_state = #{pro_state}
+		
+	</select>
+	-->
+	
+	<select id="improject" resultType="ProjectVO" parameterType="ProjectVO">
+	
+		select * from project 
+		where pro_code = #{pro_code}
+	
+	</select>
+	
+	
+	<select id="improBinfo" resultType="Basic_infoVO" parameterType="ProjectVO">
+	
+		select * from pu_basic_info 
+		where pu_basic_info_pro_no = #{pro_code}
+	
+	</select>
+	
+	<select id="improMakfo" resultType="Maker_infoVO" parameterType="ProjectVO">
+		
+		select * from pu_maker_info 
+		where PU_MAKER_INFO_pro_no = #{pro_code}
+	
+	</select>
+	
+	<select id="improProbd" resultType="Proboard_commentVO" parameterType="ProjectVO">
+	
+		select * from proboard_comment
+		where pro_code = #{pro_code}
+	
+	</select>
+
+	<select id="improBoaed" resultType="Project_boardVO" parameterType="ProjectVO">
+	
+		select * from project_board 
+		where project_board_pro_no = #{pro_code} and project_board_cate = '진행과정'
+		ORDER BY PROJECT_BOARD_NO DESC
+	
+	</select>
+	
+	<select id="improBoard" resultType="Project_boardVO" parameterType="Project_boardVO">
+	
+		select * from project_board
+		where project_board_no = #{project_board_no} 
+	
+	</select>
+	
+	<select id="improRedsn" resultType="Reward_dsnVO" parameterType="ProjectVO">
+	
+		select * from pu_reward_dsn 
+		where pu_reward_dsn_pro_no = #{pro_code}
+	
+	</select>
+	
+	<select id="improRisk" resultType="RiskpolicyVO" parameterType="ProjectVO">
+	
+		select * from pu_riskpolicy 
+		where PU_RISKPOLICY_pro_no = #{pro_code}
+	
+	</select>
+	
+	<select id="improStory" resultType="StoryVO" parameterType="ProjectVO">
+	
+		select * from pu_story 
+		where PU_STORY_pro_no = #{pro_code}
+	
+	</select>
+	
+	<select id="improPustr" resultType="PurhistoryVO" parameterType="ProjectVO">
+	
+		select * from purhistory
+		where PURHISTORY_CODE = #{pro_code}
+	
+	</select>
+	
+	
+	<select id="improsele" resultType="Reward_dsnVO" parameterType="String">
+	
+		select * from pu_reward_dsn
+		where pu_reward_dsn_pro_no = #{pro_code} and pu_reward_dsn_detail = #{option}
+		
+	</select>
+	
+	<insert id="insert" parameterType="purhistoryVO">
+		<!--<foreach item = "item" index = "index" collection = "java.util.List" separator = "," open = "INSERT ALL " close = "SELECT * FROM PURHISTORY">-->
+		insert into purhistory 
+		(purhistory_reward,
+		purhistory_buyer,
+		purhistory_funding_date,
+		purhistory_amount,
+		purhistory_cnt,
+		purhistory_paystate,
+		purhistory_code, 
+		purhistory_cate,
+		purhistory_delivery,
+		purhistory_phone,
+		purhistory_address, 
+		purhistory_name,
+		purhistory_billing_key
+		)
+		
+		VALUES
+		(#{purhistory_reward},#{purhistory_buyer},sysdate,  
+		 #{purhistory_amount},#{purhistory_cnt},'결재대기',#{purhistory_code}, 
+		 #{purhistory_cate},#{purhistory_delivery},#{purhistory_phone},#{purhistory_address},
+		  #{purhistory_name},#{purhistory_billing_key})
+		<!--</foreach>-->
+	</insert>
+	
+	<!--<insert id="inserts" parameterType="Project_boardVO">
+		
+		insert into project_board 
+		(project_board_no,   project_board_cate, project_board_title,   project_board_content, project_board_img,    project_board_writer,    project_board_regdate  )
+		VALUES(${project_board_no},  '문의',  ${project_board_title},   ${project_board_content},  ' ',   ${project_board_writer},    sysdate  )
+	</insert>
+	
+	
+	<sql id="noMax">
+		(select max(no)+1 from board)
+	</sql>
+	
+	<insert id="insert" parameterType="PurhistoryVO">
+		
+		insert into PURHISTORY 
+		(  PURHISTORY_REWARD,    PURHISTORY_BUYER,    PURHISTORY_FUNDING_DATE,    PURHISTORY_AMOUNT,    PURHISTORY_CNT,   PURHISTORY_PAYSTATE,   PURHISTORY_CODE, PURHISTORY_CATE, PURHISTORY_DELIVERY, PURHISTORY_PHONE, PURHISTORY_ADDRESS, PURHISTORY_NAME, PURHISTORY_BILLING_KEY )
+		(#{PURHISTORY_REWARD,   #{ PURHISTORY_BUYER},    sysdate,   #{ PURHISTORY_AMOUNT},    #{PURHISTORY_CNT},   #{PURHISTORY_PAYSTATE},   #{PURHISTORY_CODE}, #{PURHISTORY_CATE}, #{PURHISTORY_DELIVERY}, #{PURHISTORY_PHONE}, #{PURHISTORY_ADDRESS}, #{PURHISTORY_NAME}, #{PURHISTORY_BILLING_KEY })
+	</insert>-->
+	<update id="modify" parameterType="java.lang.Integer">
+		
+		<![CDATA[
+			update board set cnt = cnt + 10 where #{no} < no
+		]]>
+	</update>
+	
+	<delete id = "delete" parameterType="projectVO">
+		delete from board where no = #{no} and pw = #{pw}
+	</delete>
+	
+	<!-- project_board_no[게시글 번호] 를 추출하기 위한 sql문 -->
+	<select id="board_no" parameterType="project_boardVO" resultType="java.lang.Integer">
+		select max(project_board_no) from project_board
+	</select>
+	
+	<!-- 판매자에게 문의 -->
+	<insert id="inquiry_insert" parameterType="project_boardVO">
+		insert into project_board
+		(project_board_no, project_board_pro_no, project_board_regdate, project_board_cate, 
+		project_board_title, project_board_content, project_board_writer)
+		values
+		(#{project_board_no}+1, #{project_board_pro_no}, sysdate, #{project_board_cate}, 
+		#{project_board_title}, #{project_board_content}, #{project_board_writer}) 
+	</insert>
+	
+	<!-- 펀딩 종료 리스트 뽑기-->
+	<select id="endPro" resultType="projectVO">
+		<![CDATA[
+		select * from project where pro_endate < sysdate
+		]]>
+	</select>
+	
+	
+	
+	
+	
+	
+	
+</mapper>

@@ -1,0 +1,53 @@
+.send_Management{
+	width: 85%;
+	border: 1px solid #000;
+	margin: 0 auto;
+}
+.send_Management > span{
+	font-weight: bold;
+	padding-left: 10px;
+	font-size: 20px;
+}
+.table{
+	margin-bottom: 0;
+}
+th{
+	font-weight: bold;
+}
+.table td{
+	font-size: small;
+	vertical-align: middle;
+}
+.btn_wrapper{
+	width: 100%;
+	height: 10px;
+}
+.btn_wrapper button{
+	width: 60px;
+	height: 30px;
+	border: 1px solid #000;
+	font-size: small;
+	background-color: #00000013;
+	margin-left: 10px;
+}
+.btn_wrapper .send_btn{
+	width: 40px;
+}
+.btn_list{
+	width: 300px;
+	height: 40px;
+	text-align: center;
+	padding-top: 3px;
+	float: right;
+	margin-top: 10px;
+}
+#funding_status_page{
+	border-top: 1px solid #000;
+}
+.btn-toolbar{
+	justify-content: center;
+}
+.btn-group .btn{
+	color: gray;
+	font-size: small;
+}

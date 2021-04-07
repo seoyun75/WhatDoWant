@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"https://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.example.demo.join.JoinMapper">
+
+	<sql id="noMax">
+		(select max(member_no)+1 from member)
+	</sql>
+	<insert id="join" parameterType="memberVO">
+		<selectKey keyProperty="member_no" resultType="java.lang.Integer" order="BEFORE">
+			<include refid="noMax"/>
+		</selectKey>
+		insert into member
+		(member_no, member_id, member_pname, member_pw, member_phone, member_img, member_business_license, member_address, member_point)
+		values
+		(#{member_no}, #{member_id,jdbcType=VARCHAR}, #{member_pname,jdbcType=VARCHAR}, #{member_pw,jdbcType=VARCHAR}, 0, null, null, null, 0)
+	</insert>
+
+</mapper>

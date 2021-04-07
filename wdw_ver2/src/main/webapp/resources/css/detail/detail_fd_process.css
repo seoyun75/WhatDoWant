@@ -1,0 +1,662 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+    font-family : 'Open Sans', sans-serif;
+    color: #464646;
+}
+
+
+#wrap{
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* 상단 =================================== */
+
+
+
+
+
+
+
+/* 큰제목 */
+.content_top {
+    width: 100%;
+}
+
+.big_title {
+    width: 100%;
+    height: 220px;
+    text-align: center;
+}
+
+.big_title > div {
+    display: inline-block;
+    width: 80%;
+    height: 150px;
+    margin-top: 35px;
+}
+
+.big_title > div > p:nth-of-type(1) {
+    width: 100%;
+    display: inline-block;
+    font-size:40px;
+    font-weight: bold;
+    margin: 20px;
+}
+
+.big_title > div > p:nth-of-type(2) {
+    width: 100%;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 10px;
+}
+
+
+/* 상품사진 + 간단정보 */
+.goods_top {
+    margin: 0 auto;
+    width: 1440px;
+    height: 560px;
+    padding: 0 80px;
+}
+
+/* 메인썸네일 */
+.goods_top > div:nth-of-type(1) {
+    width: 890px;
+    height: 560px;
+    float: left;
+    overflow: hidden;
+}
+
+.goods_top > div:nth-of-type(1) img {
+    width: 100%;
+}
+
+.goods_top > div:nth-of-type(2) {
+    display: inline-block;
+    width: 350px;
+    height: 560px;
+    float: right;
+    padding-right: 5px;
+}
+
+.goods_top > div:nth-of-type(2) > div {
+    width: 100%;
+    text-align: left;
+}
+
+.goods_top > div:nth-of-type(2) div > p:nth-child(1) {
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+.goods_top > div:nth-of-type(2) div > p:nth-child(2) {
+    font-size: 45px;
+    float: left;
+    margin-bottom: 40px;
+}
+
+.goods_top > div:nth-of-type(2) div > p:nth-child(3) {
+    width: 50px;
+    height: 45px;
+    font-size: 17px;
+    line-height: 80px;
+    margin-left: 5px;
+    float: left;
+    
+}
+
+.goods_top > div:nth-of-type(2) div:nth-child(2),
+.goods_top > div:nth-of-type(2) div:nth-child(3) {
+    clear: both;
+}
+
+.goods_top  hr {
+    clear: both;
+    border: 2px solid #815b9c;
+    margin: 18px 0 30px 0;
+    background: #815b9c;
+    display: block;
+}
+
+#dday {
+    text-align: center;
+    width: 100%;
+    height: 50px;
+    margin-top: 40px;
+    font-size: 40px;
+    font-weight: 700;    
+}
+
+#dday span{
+	color: #815b9c;
+}
+
+#dday > p { 
+    margin: 0 auto;
+    font-size: 50px;
+}
+
+.goods_top > div:nth-of-type(2) > a {
+    display: block;
+    width: 100%;
+    height: 50px;
+    background: #815b9c;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 35px 0 10px 0;
+}
+
+.goods_top > div:nth-of-type(2) > a:hover {
+    background: #694682;
+}
+
+.goods_top > div:nth-of-type(2) > a > div{
+    text-align: center;
+    line-height: 50px;
+    font-size: 17px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.goods_top > div:nth-of-type(2) > div:nth-child(7){
+    margin-right: 10px;
+    line-height: 35px;
+    text-align: center;
+}
+
+.goods_top > div:nth-of-type(2) > div:nth-child(7),
+.goods_top > div:nth-of-type(2) > div:nth-child(8) {
+    width: 167px;
+    height: 35px;
+    border: 1px solid #ccc;
+    margin-top: 20px;
+    float: left;
+    
+}
+
+.goods_top > div:nth-of-type(2) > div:nth-child(9) {
+    width: 110px;
+    height: 35px;
+    border: 1px solid #ccc;
+    margin-top: 20px;
+    float: left;
+}
+input[type=checkbox] {
+    display: none;
+}
+
+
+input[type=checkbox] +label > div{
+    margin: 7px 5px 6px 27px;
+    background-image: url("../../img/detail/heart_nocheck.png");
+    width: 22px;
+    height: 22px;
+    background-size: 22px 22px;
+    background-repeat: no-repeat;
+    float: left;
+}
+
+input[type=checkbox]:checked +label > div {
+    background-image: url("../../img/detail/heart_check.png");
+}
+
+.goods_top > div:nth-of-type(2) > div:nth-child(7):hover,
+.goods_top > div:nth-of-type(2) > div:nth-child(8):hover,
+.goods_top > div:nth-of-type(2) > div:nth-child(9):hover {
+    background: #ebebeb;
+}
+
+input[type=checkbox] +label > p{
+    font-size: 15px;
+    line-height: 35px;
+    float: left;
+}
+
+.goods_top > div:nth-of-type(2) > div:nth-child(8),
+.goods_top > div:nth-of-type(2) > div:nth-child(9) {
+    font-size: 15px;
+    line-height: 35px;
+    text-align: center;
+    width: 167px;
+}
+
+.goods_top > div > .btn {
+    border-radius: 0;
+    background: #fff;
+    color: #464646;
+    padding-top: 0;
+}
+
+.sns-go {
+    text-align:center;
+    padding: 20px 0;
+}
+
+.sns-go li {
+    display:inline-block;
+    margin: 0 5px;
+}
+
+.sns-go li img {
+    border-radius:50%;
+}	
+
+
+/* 공지사항, 커뮤니티 등 카테고리 */
+
+.category {
+    margin: 0 auto;
+    margin-top: 50px;
+    width: 100%;
+    height: 50px;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc; 
+}	
+
+.category > div {
+    margin: 0 auto;
+    margin-bottom: 30px;
+    width: 1280px;
+    height: 50px;
+    line-height: 50px;
+
+}			
+
+.category > div > a {
+    display: inline-block;
+    width: 120px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    color: #717171;
+} 
+
+.category > div > a:hover {
+    box-shadow: inset 0px -3px 0px #ccc;
+    color: #44394d;
+} 
+
+.category > div > a:nth-of-type(4) {
+    box-shadow: inset 0px -3px 0px #815b9c;
+    color: #44394d;
+}
+
+
+/* 상세 */
+.detail {
+    width: 100%;
+    height: 1300px;
+    background: #f0f0f0;
+}
+.detail > div {         /* out 클래스 */
+    width: 1440px;
+    height: 1300px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0 80px;
+}
+
+.detail > div > .detail_left {
+    width: 890px;
+    height: 1185px;
+    background: #fff;
+    box-shadow: 0px 1px 5px #ccc;
+    float: left;
+    margin-top: 15px;
+    overflow: auto;
+    padding: 20px;
+    text-align: left;
+    
+
+    
+}
+
+
+
+.detail > div > .detail_left > div:nth-child(1) {
+    padding: 0 20px;
+    width: 100%;
+    height: 40px;
+    border-bottom: 2px solid #ccc;
+    margin-top: 50px;
+}
+
+.detail > div > .detail_left > div:nth-child(1) > div:nth-child(1){
+    width: 50%;
+    height: 100%;
+    font-size: 20px;
+    font-weight: bold;
+    float: left;
+}
+
+.detail > div > .detail_left > div:nth-child(1) > div:nth-child(2) {
+    width: 10%;
+    height: 100%;
+    font-weight: bold;
+    float: right;
+}
+
+.detail > div > .detail_left > div:nth-child(1) > div:nth-child(3) {
+    width: 10%;
+    height: 100%;
+    font-weight: bold;
+    float: right;
+}
+
+/* 게시글 목록*/
+.detail > div > .detail_left > div a {
+    padding: 0 20px;
+    display: block;
+    width: 100%;
+    height: 90px;
+    border-bottom: 1px solid #ccc;
+    margin-top: 20px;
+}
+
+.detail > div > .detail_left > div a:hover {
+    text-decoration: none;
+}
+
+.detail > div > .detail_left > div a > p:nth-child(1) {
+    font-size: 15px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.detail > div > .detail_left > div a > p:nth-child(2) {
+    font-weight: bold;
+    margin: 10px 0;
+    font-size: 17px;
+}
+
+.detail > div > .detail_left > div a > p:nth-child(3) {
+    color: #717171;
+    font-size: 13px;
+    margin: 10px 0;
+}
+
+
+
+.detail > div > .detail_left::-webkit-scrollbar,
+.detail > div > .detail_right > .reward_choose::-webkit-scrollbar {
+    display: none;
+}
+
+
+.detail > div > .detail_right {
+    width: 385px;
+    height: 1200px;
+    float: left;
+    margin-top: 15px;  
+    text-align: left;
+    padding-right: 5px;
+}
+
+.detail > div > .detail_right > div:nth-child(1) {
+    width: 355px;
+    height: 290px;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0px 1px 5px #ccc;
+    float: right;
+}
+
+.detail > div > .detail_right > div:nth-child(1) > p:nth-child(1) {
+    font-weight: bold;
+    font-size: 15px;
+} 
+
+.detail > div > .detail_right > div:nth-child(1) > p:nth-child(2) {
+    display: inline-block;
+    width: 100%;
+    height: 50px;
+    margin-bottom: 15px;
+}
+
+.detail > div > .detail_right > div:nth-child(1) > p:nth-child(2) > img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    margin: 15px 10px 0px 0;
+    float: left;
+}
+
+.detail > div > .detail_right > div:nth-child(1) > p:nth-child(2) > a{
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 68px;
+}
+
+.detail > div > .detail_right > div:nth-child(1) > p:nth-child(3) {
+    font-size: 15px;
+}
+
+
+.detail > div > .detail_right > div:nth-child(1) > hr {
+    background: #ccc;
+    display: block;
+    margin: 20px 0;
+}
+
+.detail > div > .detail_right > div:nth-child(1) > p:nth-child(5){
+    float: left;
+    margin-right: 10px;
+}
+
+.detail > div > .detail_right > div:nth-child(1) > p:nth-child(6){
+    color: #815b9c;
+    font-weight: bold;
+}
+
+.detail > div > .detail_right > div:nth-child(1) > a {
+    display: inline-block;
+    width: 100%;
+    height: 50px;
+    background: #ebebeb;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 15px;
+    border-radius: 5px;
+    border: none;
+}
+
+.detail > div > .detail_right > div:nth-child(1) > a img {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    float: left;
+    margin: 10px 0 15px 57px;
+}
+
+.detail > div > .detail_right > div:nth-child(1) > a > div > p{
+    font-size: 16px;
+    display: inline-block;
+    width: 200px;
+    line-height: 20px;
+    float: left;
+    text-align: left;
+    margin: 10px 0 15px 7px;
+    cursor: pointer;
+    color: #717171;
+    font-weight: bold;
+}
+.detail > div > .detail_right > div:nth-child(1) > a:hover {
+    background: #ccc;
+}
+
+.detail > div > .detail_right > div:nth-child(1) > a:hover > div > p{
+    color: #44394d;
+}
+
+
+.ask > div > div > h1 {
+    display: block;
+    width: 100%;
+    height: 60px;
+    background: #815b9c;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 60px;
+}
+
+.ask > div > div > div > form > div:nth-of-type(1) {
+    float: left;
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid #ccc;
+    line-height: 40px;
+}
+
+.ask > div > div > div > form > div:nth-of-type(1) > p:nth-of-type(1) {
+    font-size: 15px;
+    font-weight: bold;
+    width: 10%;
+    height: 100%;
+    float: left;
+}
+
+.ask > div > div > div > form > div:nth-of-type(1) > p:nth-of-type(2) {
+    font-size: 15px;
+    font-weight: bold;
+    width: 80%;
+    height: 100%;
+    float: left;
+    color: #44394d;
+}
+
+.ask > div > div > div > form > div:nth-of-type(2) {
+    float: left;
+    width: 100%;
+    height: 70px;
+    border-bottom: 1px solid #ccc;
+    line-height: 70px;
+}
+
+.ask > div > div > div > form > div:nth-of-type(2) > p {
+    font-size: 15px;
+    font-weight: bold;
+    width: 10%;
+    height: 100%;
+    float: left;
+}
+
+.ask > div > div > div > form > div:nth-of-type(2) > select {
+    font-size: 15px;
+    width: 120px;
+    height: 40px;
+    float: left;
+    color: #44394d;
+    margin-top: 15px;
+    border-radius: 5px;
+}
+
+.ask > div > div > div > form > textarea {
+    margin-top: 20px;
+    width: 100%;
+    height: 200px;
+    text-indent: 0px;
+    padding: 10px 10px;
+    line-height: 20px;
+}
+
+.ask > div > div > div > form > textarea::placeholder {
+    color: #ccc;
+}
+
+.ask > div > div > div > button:nth-of-type(2) {
+    background: #815b9c;
+    border: 1px solid #815b9c;
+}
+
+
+.detail > div > .detail_right > p {
+    display: inline-block;
+    width: 360px;
+    font-weight: bold;
+    font-size: 15px;
+    margin: 17px 0 10px 0px;
+    float: right;
+} 
+
+
+
+.reward_choose {
+    width: 360px;
+    height: 883px;
+    float: right;
+    overflow: auto;
+}
+
+
+.reward_choose > a {
+    text-decoration: none;
+    display: inline-block;
+    width: 355px;
+    height:100px;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0px 1px 5px #ccc;
+    margin-bottom: 15px;
+    float: right;
+    margin-left: 5px;
+    margin-right: 2px;
+}
+
+.reward_choose > .re_choice {
+    height: auto;
+}
+
+
+.reward_choose > .only_funding > p:nth-of-type(1),
+.reward_choose > .re_choice > p:nth-of-type(1) {
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.reward_choose > .only_funding > p:nth-of-type(2) {
+    margin: 10px 0;
+}
+
+.reward_choose > .re_choice > p:nth-of-type(2) {
+    margin: 15px 0;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.reward_choose > .re_choice > p:nth-of-type(3) {
+    line-height: 15px;
+    color: #717171;
+}
+
+.reward_choose > .re_choice > p:nth-of-type(4) {
+    color: #717171;
+    font-weight: bold;
+    margin: 15px 0 8px 0;
+}
+
+.reward_choose > .re_choice > p:nth-of-type(5) {
+    color: #464646;
+    font-size: 15px;
+}
+
+.only_funding:hover {
+    background: #815b9c;
+    opacity: 0.9;
+}
+
+.re_choice:hover {
+    background: #815b9c;
+    opacity: 0.9;
+}
+
+.re_choice:hover > p:nth-of-type(3),
+.re_choice:hover > p:nth-of-type(4) {
+    color: #464646;
+}

@@ -1,0 +1,209 @@
+
+/* 내가 번 금액, 내가 쓴 금액 */
+
+#wrap{
+    width: 100%;
+    margin: 0 auto;
+}
+#contents{
+    margin: 0 auto;
+    width: 1280px;
+    height: 100%;
+    color:#333;
+    /*background-color: #eee;*/
+    text-align: center;
+}	
+#justify-content-center{
+    width: 1280px;
+}
+
+.mp_title{
+    padding-top: 60px;
+    height: 200px;
+    text-align: center;
+    font-size: 40px;
+}
+
+.mp_nav{
+    width: 100%;
+    height: 62px;
+    text-align: center;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+.mp_nav ul{
+    height: 62px;
+    text-align: center;
+    margin: 0 auto;
+}
+.cont{
+    position: relative;
+    width:100%;
+    height: 1500px;
+    margin: 0 auto;
+
+}
+.mp_nav a{
+    display: inline-block;
+    width: 100px;
+    height: 62px;
+    float: center;
+    text-align: center;
+    font-size: 20px;
+    padding: 15px 10px;
+    color: #333;
+}
+.mp_nav a:hover{
+    background: #815b9c;
+    color: #fafafa;
+    text-decoration: none;
+}
+#c-area{
+    width: 400px;
+    margin: 0px auto;
+    padding: 0px 15px 40px 15px;
+    
+}
+.c-title{
+    font-size: 2em;
+    color: black;
+    font-weight: bold;
+    margin: 80px 0 50px 0;
+    text-align: left;
+}
+
+.term-check-all{
+    position: relative;
+    margin-bottom: 30px;
+    padding-right: 25px;
+}
+.c-checkbox{
+    display: block;
+}
+.c-checkbox>input{
+    position: absolute;
+    margin-top: 3px;
+}
+.c.text{
+    margin-bottom: 5px;
+}
+.c.text.subtext1{
+    padding-left: 35px;
+    font-size: 1.3em;
+}
+.c.text.caption1{
+    display: inline-block;
+    padding-left: 35px;
+    font-size: 0.6em;
+    
+}
+.term{
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 0;
+    padding: 0;
+    width: 25px;
+    height: 100%;
+}
+.field{
+    margin: 25px 0px;
+}
+.wdw.input.action{
+    display: flex;
+    position: relative;
+}
+.wdw.input{
+    width: 100%;
+    height: 45px;
+    outline: none;
+    vertical-align: middle;
+    background-color: #fff;
+    font-size: 17px;
+    font-weight: 300;
+    box-sizing: border-box;
+    
+}
+.wdw.input>input{
+	padding-left: 15px;
+	width: 100%;
+    height: 45px;
+    line-height: 1.2em;
+    font-size: 17px;
+    font-weight: 300;
+    border: 1px solid #eeeeee;
+}
+.wdw.input > input::placeholder{
+    font-size: 17px;
+}
+#mem-id{
+    padding-right: 100px;
+}
+.wdw.input > button {
+    position: absolute;
+    padding: 0 13px 0 13px;
+    margin: 5px 5px 0 0;
+    right: 0;
+    outline: none;
+    height: 35px;
+    line-height: 35px;
+    background-color: #815b9c;
+    color: #fff;
+    font-size: 15px;
+}
+em.help{
+    line-height: 20px;
+    font-size: 13px;
+    font-weight: bold;
+}
+.help{
+    display: block;
+    margin-top: 3px;
+}
+.mem-pw-field div{
+    margin-top: 10px;
+}
+.form-com{
+    width: 100%;
+    height: 45px;
+    font-size: 17px;
+    outline: none;
+    background: #815b9c;
+    color: #fff;
+    border: 1px solid #eeeeee;
+}
+article{
+    height: 250px;
+    overflow: auto;
+}
+.choice-social{
+    margin: 30px 0px;
+    text-align: center;
+}
+.choice-social button{
+    display: inline-block;
+    border: 1px solid gainsboro;
+    border-radius: 25px;
+    width: 50px;
+    height: 50px;
+    margin: 0px 10px;
+    text-align: center;
+    vertical-align: middle;
+}
+.form-select.agency{
+    width: 100%;
+    height: 45px;
+    outline: none;
+    line-height: 1.2em;
+    font-size: 17px;
+    font-weight: 300;
+    border: 1px solid #eeeeee;
+    padding-left: 10px;
+}
+.wdw.input.action.phone{
+    width: 75%;
+    display: inline-block;
+}
+.form-com.phone{
+    width: 23%;
+}

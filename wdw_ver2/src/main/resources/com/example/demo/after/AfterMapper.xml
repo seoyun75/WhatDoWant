@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"https://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.example.demo.after.AfterMapper">
+
+	<select id="purhislist" parameterType="purhistoryVO" resultType="purhistoryVO">
+		select * from purhistory where purhistory_code = #{purhistory_code}
+	</select>
+	
+	<!-- 
+	project_up 사이트에서 로그인 된 계정(member_id)으로 프로젝트 코드(pro_code) 추출을 함.
+	한 사람이 여러개의 프로젝트를 가지고있으면? ex a.aa.aa = 프로젝트를 6( 프로젝트1 / 프로젝트2 / 프로젝트3 / 프로젝트4 / 프로젝트5 / 프로젝트 6 )개 가지고있음
+	프로젝트 코드 6개 추출 됨
+	기준점(연결점)4을 잡아서 pro_code 추출방법은?
+	List로 코드6개를 가져올 수는 있음
+	
+	or 파라미터를 리퀘스트로 받아 프로젝트 코드 추출?
+	-->
+	<select id="procode" parameterType="String" resultType="java.lang.Integer">
+		select pro_code from project where pro_writter = #{id} 
+	</select>
+	
+	<select id="inquiryList" parameterType="projectVO" resultType="project_boardVO">
+		select * from project_board 
+		where project_board_pro_no = #{pro_code}
+			and project_board_cate = '문의'
+		order by project_board_pro_no desc
+	</select>
+	
+	<insert id="inquiry_answer" parameterType="project_boardVO">
+		insert into project_board
+		(project_board_no, project_board_pro_no, project_board_regdate, project_board_cate, project_board_title, project_board_content,
+		project_board_writer)
+		values
+		(#{project_board_no}+1, #{project_board_pro_no}, sysdate, #{project_board_cate}, #{project_board_title}, #{project_board_content}, #{project_board_writer}) 
+	</insert>
+	
+	<select id="title" parameterType="project_boardVO" resultType="String">
+		select project_board_title from project_board where project_board_cate = '문의' and project_board_writer = #{project_board_writer} 
+	</select>
+
+	
+</mapper>

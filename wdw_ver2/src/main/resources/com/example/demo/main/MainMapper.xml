@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"https://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.example.demo.main.MainMapper">
+
+	<!-- 새 프로젝트 -->
+	<!-- 프로젝트 시작일을 기준으로 가장 최근 6개의 프로젝트 -->
+	<select id="newProject" resultType="projectVO">
+		<![CDATA[
+			SELECT * from(
+			select * from project WHERE NOT PRO_STARTDATE IS NULL order by PRO_STARTDATE DESC
+			) WHERE rownum <= 6
+		]]>
+	</select>
+	
+	<!-- 이 달의 프로젝트 -->
+	<select id="startupProject" resultType="projectVO">
+		<![CDATA[
+			SELECT * FROM (
+				SELECT * FROM project 
+				WHERE PRO_STATE IN ('진행', '얼리버드') 
+				AND PRO_LICENSE in (
+					SELECT BUSINESS_LICENSE FROM BUSINESS
+					WHERE MONTHS_BETWEEN(SYSDATE, BUSINESS_LICENSE_REGDATE)<=12*5)
+				ORDER BY PRO_NOW_AMOUNT DESC)
+			WHERE rownum <= 5	
+		]]>
+	</select>
+	
+	<!-- 마감임박 -->
+	<select id="closingProject" resultType="projectVO">
+		<![CDATA[
+			select * from (
+				select * from project 
+				where pro_state in ('진행','얼리버드')
+				and pro_endate <= sysdate+5
+				ORDER BY PRO_NOW_AMOUNT/PRO_TARGET_AMOUNT desc
+			) where rownum <= 5
+		]]>
+	</select>
+	
+	<!-- 얼리버드 -->
+	<!-- 상태속성이 '얼리버드'인 프로젝트 -->
+	<select id="earlyBird" resultType="projectVO">
+		<![CDATA[
+			SELECT * from(
+			select * from project WHERE pro_state='얼리버드' ORDER BY PRO_STARTDATE DESC
+			) WHERE rownum <= 3
+		]]>
+	</select>
+	
+	<!-- 급 상승 프로젝트 -->
+	<!-- 당일 현재까지 프로젝트 별 매출액 및 수량 -->
+	<select id="todaySales" resultType="salesRecord">
+		<![CDATA[
+			SELECT PURHISTORY_CODE, sum(PURHISTORY_AMOUNT) AS amount, sum(PURHISTORY_CNT) AS totQuantity
+			FROM PURHISTORY 
+			WHERE PURHISTORY_FUNDING_DATE >= (
+				SELECT TO_date(sysdate, 'yyyy-mm-dd') FROM dual 
+			)
+			GROUP BY PURHISTORY_CODE 
+			ORDER BY amount DESC 
+		]]>
+	</select>
+	<!-- 어제 프로젝트 별 매출액 및 수량 -->
+	<select id="yesterdaySales" resultType="salesRecord">
+		<![CDATA[
+			SELECT PURHISTORY_CODE, sum(PURHISTORY_AMOUNT) AS amount, sum(PURHISTORY_CNT) AS totQuantity
+			FROM PURHISTORY 
+			WHERE PURHISTORY_FUNDING_DATE >= (SELECT TO_char(sysdate-1, 'yyyy-mm-dd') FROM dual) 
+				AND PURHISTORY_FUNDING_DATE < (SELECT TO_char(sysdate, 'yyyy-mm-dd') FROM dual) 
+			GROUP BY PURHISTORY_CODE
+			ORDER BY amount DESC 
+		]]>
+	</select>
+	<!-- 검색한 상위 6개 프로젝트 내용 가져오기 -->
+	<select id="soarProject" resultType="projectVO" parameterType="java.util.HashMap">
+		<![CDATA[
+			select * from(
+				select * from project where pro_code in
+		]]>
+			<foreach collection="topPro" item="pp" separator="," open="(" close=")">
+				#{pp.purhistory_code}
+			</foreach>
+		<![CDATA[
+				order by pro_now_amount desc
+			) WHERE rownum <= 6
+		]]>
+	</select>
+	
+	<!-- 좋아요가 많이 눌린 프로젝트 상위 6개
+	<select id="heartProject" resultType="projectVO">
+		<![CDATA[
+			SELECT * FROM (
+				SELECT * FROM project 
+				WHERE PRO_STATE IN ('진행', '얼리버드')
+				ORDER BY PRO_HEART DESC)
+			WHERE rownum <= 5	
+		]]>
+	</select> -->
+	
+	<!-- 요일이 바뀔때마다 카테고리별 상위 6개 상품 전환 -->
+	<!-- 일요일(전체상품 중 상위 6개) -->
+	<select id="sundayProject" resultType="projectVO">
+		
+		<![CDATA[
+			select * from
+				(select * from project where to_char(sysdate, 'day') = '일요일' and pro_state = '진행' 
+				order by (pro_now_amount/pro_target_amount)*100 desc)
+			where rownum <=6
+		]]>
+	</select>
+	
+	<!-- 월요일(반려동물 중 상위 5개) -->
+	<select id="mondayProject" resultType="projectVO">
+		
+		<![CDATA[
+			select * from
+				(select * from project where to_char(sysdate, 'day') = '월요일' and pro_cate = '반려동물' and pro_state = '진행'  
+				order by (pro_now_amount/pro_target_amount)*100 desc)
+			where rownum <=6
+		]]>
+	</select>
+	
+	<!-- 화요일(뷰티 중 상위 5개) -->
+	<select id="tuesdayProject" resultType="projectVO">
+		
+		<![CDATA[
+			select * from
+				(select * from project where to_char(sysdate, 'day') = '화요일' and pro_cate = '뷰티' and pro_state = '진행'  
+				order by (pro_now_amount/pro_target_amount)*100 desc)
+			where rownum <=6
+		]]>
+	</select>
+	
+	<!-- 수요일(테크/가전 중 상위 5개) -->
+	<select id="wednesdayProject" resultType="projectVO">
+		
+		<![CDATA[
+			select * from
+				(select * from project where to_char(sysdate, 'day') = '수요일' and pro_cate = '테크/가전' and pro_state = '진행'  
+				order by (pro_now_amount/pro_target_amount)*100 desc)
+			where rownum <=6
+		]]>
+	</select>
+	
+	<!-- 목요일(패션/잡화 중 상위 5개) -->
+	<select id="thursdayProject" resultType="projectVO">
+		
+		<![CDATA[
+			select * from
+				(select * from project where to_char(sysdate, 'day') = '목요일' and pro_cate = '패션/잡화' and pro_state = '진행'  
+				order by (pro_now_amount/pro_target_amount)*100 desc)
+			where rownum <=6
+		]]>
+	</select>
+	
+	<!-- 금요일(푸드 중 상위 5개) -->
+	<select id="fridayProject" resultType="projectVO">
+		
+		<![CDATA[
+			select * from
+				(select * from project where to_char(sysdate, 'day') = '금요일' and pro_cate = '푸드' and pro_state = '진행'  
+				order by (pro_now_amount/pro_target_amount)*100 desc)
+			where rownum <=6
+		]]>
+	</select>
+	
+	<!-- 토요일(홈리빙 중 상위 5개) -->
+	<select id="saturdayProject" resultType="projectVO">
+		
+		<![CDATA[
+			select * from
+				(select * from project where to_char(sysdate, 'day') = '토요일' and pro_cate = '홈리빙' 
+				order by (pro_now_amount/pro_target_amount)*100 desc)
+			where rownum <=6
+		]]>
+	</select>
+	
+	<!-- 리워드가 싼 상품 리스트 / 랜덤으로 35000원짜리 이하 5개 프로젝트 코드 추출 -->
+	<select id="cheapReward" parameterType="reward_dsnVO" resultType="java.lang.Integer">
+		<![CDATA[
+			select * from
+				(select pu_reward_dsn_pro_no from pu_reward_dsn where pu_reward_dsn_rew_price <= 35000 
+				order by dbms_random.random) 
+			where rownum <= 6
+		]]>
+	</select>
+	
+	<!-- 추출 된 리워드 프로젝트 코드를 통하여 프로젝트 추출 -->
+	<select id="cheapList" parameterType="projectVO" resultType="projectVO">
+		select * from project where pro_code = #{pro_code}
+	</select>
+	
+</mapper>

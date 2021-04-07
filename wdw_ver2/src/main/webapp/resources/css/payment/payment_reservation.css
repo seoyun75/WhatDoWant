@@ -1,0 +1,660 @@
+* {
+    font-size: 13px;
+    font-family : 'Open Sans', sans-serif;
+    color: #464646;
+}
+
+#wrap{
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* 틀 */
+.form {
+    width: 900px;
+    height: 2100px;
+    margin: 0 auto;
+}
+
+.list {
+    width: 100%;
+    height: 190px;
+}
+
+.list > div {
+    width: 500px;
+    height: 100%;
+    margin: 0 auto;
+    padding-top: 40px;
+}
+
+.rew_deli input{
+	width: 385px;
+    height: 35px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+
+
+.pay_btn{
+	background: none;
+	border: none;
+	color: #fff;
+}
+
+.list > div div{
+    border: 1px solid #8a8a8a;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    float: left;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 50px;
+    line-height: 100px;
+    font-weight: bold;
+}
+
+.list > div > div:nth-child(3) {
+    background: #815b9c;
+    color: #fff;
+    border: none;
+}
+
+.list > div > div:nth-child(2),
+.list > div > div:nth-child(4) {
+    float: left;
+    text-align: center;
+    border: none;
+}
+
+.menu_1 {
+    width: 100%;
+    height: 130px;
+    border-top: 1px solid #464646;
+    padding: 15px;
+    padding-top: 20px;
+}
+
+.menu_1 > p:nth-child(1) {
+    color: #815b9c;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.menu_1 > p:nth-child(2) {
+    margin-top: 15px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #8a8a8a;
+}
+
+.menu_1 div {
+    width: 100%;
+    height: 20px;
+    float: right;
+}
+
+.menu_1 div > p:nth-child(1) {
+    font-size: 15px;
+    font-weight: bold;
+    float: right;
+    margin-left: 20px;
+    margin-top: 23px;
+}
+
+.menu_1 div > p:nth-child(2) {
+    font-size: 15px;
+    font-weight: bold;
+    float: right;
+    margin-top: 23px;
+}
+
+.plus_pay {
+    width: 100%;
+    height: 55px;
+    border-top: 1px solid #464646;
+    padding: 20px 15px;
+}
+
+.plus_pay > p:nth-child(1) {
+    float: left;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.plus_pay > p:nth-child(2) {
+    float: right;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+
+.delivery_charge {
+    width: 100%;
+    height: 55px;
+    border-top: 1px solid #ccc;
+    padding: 20px 15px;
+}
+
+.delivery_charge > p:nth-child(1) {
+    float: left;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.delivery_charge > p:nth-child(2) {
+    float: right;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+
+.point {
+    width: 100%;
+    height: 40px;
+    border-top: 1px solid #ccc;
+    padding: 20px 15px;
+    background: #f9f9f9;
+}
+
+.point > p:nth-child(1) {
+    float: left;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.point > input[type=checkbox] {
+    float: right;
+    margin-right: 5px;
+}
+
+.point > p:nth-child(2) {
+    float: right;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+
+.point2 {
+    width: 100%;
+    height: 60px;
+    padding: 10px 15px;
+    background: #f9f9f9;
+}
+
+.point2 > input[type=text] {
+    width: 120px;
+    height: 30px;
+    float: right;
+    position: relative;
+}
+
+.point3 p {
+    display: block;
+    width: 50%;
+    height: 45px;
+    font-size: 15px;
+    font-weight: bold;
+    background: #ccc;
+    line-height: 45px;
+    float: left;
+    padding: 5px 20px;
+}
+
+.point3 > p:nth-child(2),
+.point3 > p:nth-child(4),
+.point3 > p:nth-child(6),
+.point3 > p:nth-child(8),
+.point3 > p:nth-child(10) {
+    float: right;
+    text-align: right;
+    background: #ccc;
+    font-weight: normal;
+}
+
+.point3 > p:nth-child(9) {
+    height: 65px;
+    color: #815b9c;
+}
+
+.point3 > p:nth-child(10) {
+    height: 65px;
+    font-size: 27px;
+    font-weight: bold;
+    color: #815b9c;
+}
+
+.point4 {
+    width: 48%;
+    float: left;
+}
+
+.point4 > p,
+.point5 > p {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 30px 0 20px 0;
+}
+
+.point4 > div {
+    width: 100%;
+    height: 440px;
+    background: #eae6ed;
+    padding: 23px;
+}
+
+.point4 > div > form label {
+    font-size: 15px;
+    font-weight: bold;
+    width: 100%;
+    height: 25px;
+}
+
+.point4 > div > form label:nth-of-type(2),
+.point4 > div > form label:nth-of-type(3) {
+    margin-top: 20px;
+}
+
+
+.point4 > div > input[id=pid],
+.point4 > div > input[id=phone],
+.point4 > div > input[id=address],
+.point4 > div > div > input[id=request]
+ {
+    width: 380px;
+    height: 35px;
+    border-radius: 5px;
+}
+
+.point4 > div > div {
+    width: 100%;
+    height: 150px;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+
+.point4 > div > div > p {
+    margin-top: 15px;
+    font-weight: bold;
+    color: #815b9c;
+}
+
+.point4 > div > div > label {
+    margin-top: 30px;
+}
+
+.point5 {
+    float: right;
+    width: 48%;
+    height: 400px;
+}
+
+.point5 > div {
+    width: 100%;
+    height: 430px;
+    border-top: 3px solid #ccc;
+}
+
+.point5 > div > ul li {
+    font-size: 15px;
+    width: 50%;
+    margin-top: 20px;
+}
+
+.paypay .nav-link {
+    border: 1px solid #ccc;
+    height: 45px;
+    line-height: 27px;
+}
+
+/* 네비 */
+.paypay .nav-pills .nav-link.active,
+.paypay .nav-pills .show>.nav-link {
+    background: #815b9c;
+    border: none;
+    line-height: 27px;
+}
+
+.nav-link:hover {
+    color: #815b9c;
+}
+
+/* 간편결제 */
+.easy_payment > form p,
+.easy_payment > form > div p {
+    font-size: 15px;
+    font-weight: bold;
+    width: 50%;
+}
+
+#easy {
+    white-space: inherit;
+}
+
+.tab-content {
+    padding: 20px;
+}
+
+
+.easy_payment > form > input[id=card] {
+    position: relative;
+    margin-top: 10px;
+    width: 24%;
+    height: 38px;
+    font-size: 18px;
+    float: left;
+    margin-right: 5px;
+}
+
+.easy_payment > form > input[id=card]:nth-of-type(4) {
+    margin-right: 0;
+}
+
+.easy_payment > form > div p {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    float: left;
+}
+
+.easy_payment > form > div input {
+    height: 38px;
+    width: 49%;
+    float: left;
+    font-size: 18px;
+}
+
+.easy_payment > form > div input[type=text] {
+    margin-right: 5px;
+}
+
+.easy_payment > form > div input::placeholder {
+    font-size: 20px;
+    color: #e8e8e8;
+}
+
+.easy_payment > form > p:nth-of-type(2) {
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    float: left;
+}
+
+.easy_payment > form > input[id=birth] {
+    width: 99%;
+    height: 38px;
+    font-size: 18px;
+}
+
+.easy_payment > form > p:nth-of-type(3) {
+    width: 100%;
+    color: #ccc;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+.registration > div > button:nth-of-type(2) {
+    background: #815b9c;
+    border: none;
+}
+
+.tab-content > div > button {
+    margin-top: 30px;
+    width: 49%;
+    border: 1px solid #815b9c;
+    background: none;
+    color: #815b9c;
+}
+
+.tab-content > div > button:hover {
+    background: #815b9c;
+    color: #fff;
+    border: 1px solid #815b9c;
+}
+
+.tab-content > div > button:focus {
+    background: #815b9c;
+    color: #fff;
+    border: 1px solid #815b9c;
+}
+
+
+/* 계좌 등록 모달 */
+#exampleModal5 > div > div > #easy >form > p:nth-of-type(1),
+#exampleModal2 > div > div > #easy >form > p:nth-of-type(2) {
+    margin-bottom: 5px;
+}
+
+#exampleModal5 > div > div > #easy >form > p:nth-of-type(3) {
+    width: 100%;
+    color: #8a8a8a;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+#exampleModal5 > div > div > #easy >form > select,
+#exampleModal5 > div > div > #easy >form > input[type=text] {
+    text-align: left;
+    text-indent: 10px;
+    height: 40px;
+    font-size: 15px;
+}
+
+#exampleModal5 > div > div > #easy >form > p:nth-of-type(4),
+#exampleModal5 > div > div > #easy >form > p:nth-of-type(5),
+#exampleModal5 > div > div > #easy >form > p:nth-of-type(6) {
+    width: 100%;
+    white-space: pre-line;
+    font-size: 12px;
+    color: #ccc;
+    margin-bottom: 10px;
+}
+
+#exampleModal5 > div > div > #easy >form > p:nth-of-type(4) {
+    margin-top: 30px;
+    border-top: 1px solid rgba(204,204,204,0.5);
+    padding-top: 20px;
+}
+
+
+
+
+#warning {
+    width: 100%;
+    height: 180px;
+}
+
+#warning > p:nth-of-type(1) {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 55px 0 10px 0;
+}
+
+#warning > p:nth-of-type(2),
+#warning > p:nth-of-type(3),
+#warning > p:nth-of-type(4),
+#warning > p:nth-of-type(5) {
+    line-height: 20px;
+    white-space: pre-line;
+    color: #8a8a8a;
+    text-indent: -10px;
+    margin-left: 10px;
+}
+
+
+
+/* 직접입력 */
+.direct_payment {
+    height: 355px;
+}
+
+.direct_payment > form p,
+.direct_payment > form > div p {
+    font-size: 15px;
+    font-weight: bold;
+    width: 50%;
+}
+
+.direct_payment > form input[id=card] {
+    margin-top: 10px;
+    width: 24%;
+    height: 38px;
+    font-size: 18px;
+}
+
+.direct_payment > form > div p {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    float: left;
+}
+
+.direct_payment > form > div input {
+    height: 38px;
+    width: 49%;
+    float: left;
+    font-size: 18px;
+}
+
+.direct_payment > form > div input[type=text] {
+    margin-right: 5px;
+}
+
+.direct_payment > form > div input::placeholder {
+    font-size: 20px;
+    color: #e8e8e8;
+}
+
+.direct_payment > form > p:nth-of-type(2) {
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    float: left;
+}
+
+.direct_payment > form > input[id=birth] {
+    width: 99%;
+    height: 38px;
+    font-size: 18px;
+}
+
+.direct_payment > form > p:nth-of-type(3) {
+    width: 100%;
+    color: #ccc;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+.point6 {
+    margin-top: 50px;
+    width: 100%;
+    float: left;
+}
+.agree_title {
+    width: 100%;
+    height: 50px;
+    background: white;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    padding-left: 20px;
+    line-height: 50px;
+    font-weight: bold;
+}
+
+#agree_btn {
+    width: 100%;
+    height: 50px;
+    background: white;
+    border: 1px solid #ccc;
+    border-top: none;
+    border-radius: 0;
+    color: black;
+    text-align: left;
+    padding-left: 20px;
+    line-height: 35px;
+}
+
+button:focus {
+    outline: none;
+}
+
+#agree_btn > b {
+    float: right;
+    font-size: 13px;
+    line-height: 35px;
+    color: #f00;
+}
+
+.modal-title {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.modal-body {
+    white-space: pre-line;
+    font-size: 15px;
+    line-height: 25px;
+    padding: 20px;
+}
+
+.modal-body > p {
+    font-weight: bold;
+}
+
+#agree_list {
+    border-top: 2px solid #ccc;
+    border-bottom: 2px solid #ccc;
+}
+
+#agree_list .table_title {
+    background: #f0f0f0;
+    width: 30%;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+#agree_list .table_content {
+    width: 70%;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.agree_out > div > .btn-secondary {
+    background: #815b9c;
+    border: none;
+}
+
+agree_out > div > .btn-secondary:hover {
+    background: #694682;
+}
+
+
+
+
+.total_sponsor {
+    width: 100%;
+    height: 200px;
+    margin: 50px auto;
+    float: left;
+    font-size: 16px;
+    text-align: center;
+}
+
+.funding_button {
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    color: #fff;
+    background: #815b9c;
+    margin-top: 20px;
+}
+
+.funding_button:hover {
+    background: #694682;
+}

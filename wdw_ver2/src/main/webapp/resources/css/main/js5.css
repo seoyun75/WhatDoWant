@@ -1,0 +1,40 @@
+@charset "utf-8";
+
+
+a{text-decoration: none; color: #666;}
+a:hover{text-decoration: underline; color: #333;}
+
+#tab_wrap{width: 100%; position: relative;}
+
+.tab{height: 50px;}
+.tab li{float: left; height: 30px; font: bold 12px/30px "Verdana",sans-serif; text-align: center;}
+.tab li a{color: #333; display: block; width: 170px; font-size: 1.7em;}
+.tab li a.sel{color: #c33; border-bottom: 2px solid #c33;}
+.tab li a:hover{text-decoration: none;}
+
+.list{clear: both;}
+.list li{text-align: justify; font: normal 12px "Verdana",sans-serif;}
+.list li ol li{width: 330px; overflow: hidden; white-space: nowrap;text-overflow:ellipsis;line-height: 2em;}
+
+.list-unstyled li{
+    margin: 10px 0;
+}
+
+.media img{
+    width: 100px;
+    height: 70px;
+}
+.media{
+    position: relative;
+}
+.media-body h5{
+    margin-bottom: 5px;
+    font-size: 1.15em;
+    font-weight: 600;
+}
+.media-body p{
+    position: absolute;
+    bottom: 3px;
+}
+
+

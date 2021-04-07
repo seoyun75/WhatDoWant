@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"https://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.example.demo.board.PressMapper">
+	<select id="press_list" resultType="noticeVO"> 
+		select * from site WHERE si_cate = 'press' ORDER BY si_no desc
+	</select>
+	
+	
+	<select id="press_listSch" resultType="noticeVO" parameterType="noticeVO"> 
+		
+		select * from site where si_cate = 'press' AND si_title like '%${si_title}%' ORDER BY si_no desc
+
+	</select>
+
+	 <select id="press_detail" resultType="noticeVO" parameterType="java.lang.Integer">
+	 	select * from site where si_cate = 'press' AND si_no = #{si_no}
+	 </select>
+
+</mapper>
+
+
+
+
+
+

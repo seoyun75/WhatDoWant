@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"https://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.example.demo.project_up.Project_upMapper">
+	
+	<select id="getMaxProNo" resultType="java.lang.Integer">
+		select max(pu_basic_req_pro_no)+1 from pu_basic_req
+	</select>
+	
+	<insert id="createStep1" parameterType="basic_reqVO">
+		insert into pu_basic_req
+		(pu_basic_req_pro_no, pu_basic_req_mem_code)
+		values
+		(#{pu_basic_req_pro_no}, #{pu_basic_req_mem_code})
+	</insert>
+	<insert id="createStep2" parameterType="basic_infoVO">
+		insert into pu_basic_info
+		(pu_basic_info_pro_no, pu_basic_info_mem_code)
+		values
+		(#{pu_basic_info_pro_no}, #{pu_basic_info_mem_code})
+	</insert>
+	<insert id="createStep3" parameterType="storyVO">
+		insert into pu_story
+		(pu_story_pro_no, pu_story_mem_code)
+		values
+		(#{pu_story_pro_no}, #{pu_story_mem_code})
+	</insert>
+	<insert id="createStep5" parameterType="riskpolicyVO">
+		insert into pu_riskpolicy
+		(pu_riskpolicy_pro_no, pu_riskpolicy_mem_code)
+		values
+		(#{pu_riskpolicy_pro_no}, #{pu_riskpolicy_mem_code})
+	</insert>
+	<insert id="createStep6" parameterType="maker_infoVO">
+		insert into pu_maker_info
+		(pu_maker_info_pro_no, pu_maker_info_mem_code)
+		values
+		(#{pu_maker_info_pro_no}, #{pu_maker_info_mem_code})
+	</insert>
+	<insert id="createProj" parameterType="totalProjectSubmit">
+		insert into project
+		(pro_state, pro_code, pro_writter)
+		values
+		('입력중', #{bReq.pu_basic_req_pro_no}, #{member_id})
+	</insert>
+	
+	<select id="searchStep1" parameterType="basic_reqVO" resultType="basic_reqVO">
+		select * from pu_basic_req 
+		where pu_basic_req_mem_code = #{pu_basic_req_mem_code}
+			and pu_basic_req_pro_no = #{pu_basic_req_pro_no} 
+	</select>
+	
+	<update id="updateStep1" parameterType="basic_reqVO">
+		update pu_basic_req 
+		set 
+			pu_basic_req_reward_circu = #{pu_basic_req_reward_circu},
+			pu_basic_req_reward_plan1 = #{pu_basic_req_reward_plan1},
+			pu_basic_req_reward_plan2 = #{pu_basic_req_reward_plan2}
+		where pu_basic_req_mem_code = #{pu_basic_req_mem_code}
+			and pu_basic_req_pro_no = #{pu_basic_req_pro_no} 
+	</update>
+
+	<select id="searchStep2" parameterType="basic_infoVO" resultType="basic_infoVO">
+		select * from pu_basic_info 
+		where pu_basic_info_mem_code = #{pu_basic_info_mem_code}
+			and pu_basic_info_pro_no = #{pu_basic_info_pro_no} 
+	</select>
+	
+	<update id="updateStep2" parameterType="basic_infoVO">
+		update pu_basic_info
+		set 
+			pu_basic_info_proj_sub = #{pu_basic_info_proj_sub},
+			pu_basic_info_repre_img = #{pu_basic_info_repre_img},
+			pu_basic_info_cate = #{pu_basic_info_cate},
+			pu_basic_info_target_amount = #{pu_basic_info_target_amount},
+			pu_basic_info_end_date = #{pu_basic_info_end_date},
+			pu_basic_info_start_date = #{pu_basic_info_start_date}			
+		where pu_basic_info_mem_code = #{pu_basic_info_mem_code}
+			and pu_basic_info_pro_no = #{pu_basic_info_pro_no} 
+	</update>
+	
+	<select id="searchStep3" parameterType="storyVO" resultType="storyVO">
+		select * from pu_story
+		where pu_story_mem_code = #{pu_story_mem_code}
+			and pu_story_pro_no = #{pu_story_pro_no} 
+	</select>
+	
+	<update id="updateStep3" parameterType="storyVO">
+		update pu_story
+		set 
+			pu_story_intro_img = #{pu_story_intro_img},
+			pu_story_proj_summary = #{pu_story_proj_summary},
+			pu_story_proj_story_img = #{pu_story_proj_story_img}
+		where pu_story_mem_code = #{pu_story_mem_code}
+			and pu_story_pro_no = #{pu_story_pro_no} 
+	</update>
+	
+	<select id="searchStep4" parameterType="reward_dsnVO" resultType="reward_dsnVO">
+		select * from pu_reward_dsn
+		where pu_reward_dsn_mem_code = #{pu_reward_dsn_mem_code}
+			and pu_reward_dsn_pro_no = #{pu_reward_dsn_pro_no} 
+	</select>
+	
+	<insert id="insertStep4" parameterType="reward_dsnVO">
+		insert into pu_reward_dsn
+		(pu_reward_dsn_pro_no, pu_reward_dsn_mem_code)
+		values
+		(#{pu_reward_dsn_pro_no}, #{pu_reward_dsn_mem_code})
+	</insert>
+	
+	<update id="updateStep4" parameterType="reward_dsnVO">
+		update pu_reward_dsn
+		set 
+			pu_reward_dsn_rew_price = #{pu_reward_dsn_rew_price},
+			pu_reward_dsn_rew_name = #{pu_reward_dsn_rew_name},
+			pu_reward_dsn_detail = #{pu_reward_dsn_detail},
+			pu_reward_dsn_option = #{pu_reward_dsn_option},
+			pu_reward_dsn_sendcon = #{pu_reward_dsn_sendcon},
+			pu_reward_dsn_rew_sendmonth = #{pu_reward_dsn_rew_sendmonth},
+			pu_reward_dsn_rew_sendday = #{pu_reward_dsn_rew_sendday}
+		where pu_reward_dsn_mem_code = #{pu_reward_dsn_mem_code}
+			and pu_reward_dsn_pro_no = #{pu_reward_dsn_pro_no} 
+	</update>
+	
+	<delete id="deleteRwd" parameterType="reward_dsnVO">
+		delete from pu_reward_dsn
+		where pu_reward_dsn_mem_code = #{pu_reward_dsn_mem_code}
+			and pu_reward_dsn_pro_no = #{pu_reward_dsn_pro_no} 
+			and pu_reward_dsn_rew_name = #{pu_reward_dsn_rew_name}
+			and pu_reward_dsn_rew_price = #{pu_reward_dsn_rew_price}
+			and pu_reward_dsn_detail = #{pu_reward_dsn_detail}
+	</delete>
+	
+	
+	<select id="searchStep5" parameterType="riskpolicyVO" resultType="riskpolicyVO">
+		select * from pu_riskpolicy
+		where pu_riskpolicy_mem_code = #{pu_riskpolicy_mem_code}
+			and pu_riskpolicy_pro_no = #{pu_riskpolicy_pro_no} 
+	</select>
+	
+	<update id="updateStep5" parameterType="riskpolicyVO">
+		update pu_riskpolicy
+		set 
+			pu_riskpolicy_reward_cate = #{pu_riskpolicy_reward_cate},
+			pu_riskpolicy_prod_name = #{pu_riskpolicy_prod_name},
+			pu_riskpolicy_prod_material = #{pu_riskpolicy_prod_material},
+			pu_riskpolicy_prod_color = #{pu_riskpolicy_prod_color},
+			pu_riskpolicy_prod_size = #{pu_riskpolicy_prod_size},
+			pu_riskpolicy_manufacturer = #{pu_riskpolicy_manufacturer},
+			pu_riskpolicy_ctr_manufact = #{pu_riskpolicy_ctr_manufact},
+			pu_riskpolicy_handling = #{pu_riskpolicy_handling},
+			pu_riskpolicy_manager_info = #{pu_riskpolicy_manager_info},
+			pu_riskpolicy_no_def_policy = #{pu_riskpolicy_no_def_policy}
+		where pu_riskpolicy_mem_code = #{pu_riskpolicy_mem_code}
+			and pu_riskpolicy_pro_no = #{pu_riskpolicy_pro_no} 
+	</update>
+	
+	<select id="searchStep6" parameterType="maker_infoVO" resultType="maker_infoVO">
+		select * from pu_maker_info
+		where pu_maker_info_mem_code = #{pu_maker_info_mem_code}
+			and pu_maker_info_pro_no = #{pu_maker_info_pro_no} 
+	</select>
+	
+	<update id="updateStep6" parameterType="maker_infoVO">
+		update pu_maker_info
+		set 
+			pu_maker_info_comp_name = #{pu_maker_info_comp_name},
+			pu_maker_info_comp_img = #{pu_maker_info_comp_img},
+			pu_maker_info_inquiry_mail = #{pu_maker_info_inquiry_mail},
+			pu_maker_info_inquiry_phone = #{pu_maker_info_inquiry_phone},
+			pu_maker_info_homepage_url1 = #{pu_maker_info_homepage_url1},
+			pu_maker_info_homepage_url2 = #{pu_maker_info_homepage_url2},
+			pu_maker_info_bn_classifi = #{pu_maker_info_bn_classifi},
+			pu_maker_info_license = #{pu_maker_info_license},
+			pu_maker_info_bn_agreement = #{pu_maker_info_bn_agreement},
+			pu_maker_info_repre_name = #{pu_maker_info_repre_name},
+			pu_maker_info_repre_mail = #{pu_maker_info_repre_mail},
+			pu_maker_info_repre_phone = #{pu_maker_info_repre_phone},
+			pu_maker_info_reg_num_pre = #{pu_maker_info_reg_num_pre},
+			pu_maker_info_reg_num_post = #{pu_maker_info_reg_num_post},
+			pu_maker_info_tax_mail = #{pu_maker_info_tax_mail},
+			pu_maker_info_account_bank = #{pu_maker_info_account_bank},
+			pu_maker_info_account_number = #{pu_maker_info_account_number},
+			pu_maker_info_account_name = #{pu_maker_info_account_name},
+			pu_maker_info_account_copy = #{pu_maker_info_account_copy}
+		where pu_maker_info_mem_code = #{pu_maker_info_mem_code}
+			and pu_maker_info_pro_no = #{pu_maker_info_pro_no} 
+	</update>
+	
+	<update id="rePreImgDelete" parameterType="basic_infoVO">
+		update pu_basic_info set pu_basic_info_repre_img = null where pu_basic_info_mem_code = #{pu_basic_info_mem_code} and pu_basic_info_pro_no = #{pu_basic_info_pro_no}
+	</update>
+	<update id="introImgDelete" parameterType="storyVO">
+		update pu_story set pu_story_intro_img = null where pu_story_mem_code = #{pu_story_mem_code} and pu_story_pro_no = #{pu_story_pro_no}
+	</update>
+	<update id="storyImgDelete" parameterType="storyVO">
+		update pu_story set pu_story_proj_story_img = null where pu_story_mem_code = #{pu_story_mem_code} and pu_story_pro_no = #{pu_story_pro_no}
+	</update>
+	<update id="compDelete" parameterType="maker_infoVO">
+		update pu_maker_info set pu_maker_info_comp_img = null 
+		where pu_maker_info_mem_code = #{pu_maker_info_mem_code} and pu_maker_info_pro_no = #{pu_maker_info_pro_no} 
+	</update>
+	<update id="agreeDelete" parameterType="maker_infoVO">
+		update pu_maker_info set pu_maker_info_bn_agreement = null 
+		where pu_maker_info_mem_code = #{pu_maker_info_mem_code} and pu_maker_info_pro_no = #{pu_maker_info_pro_no} 
+	</update>
+	<update id="accountDelete" parameterType="maker_infoVO">
+		update pu_maker_info set pu_maker_info_account_copy = null 
+		where pu_maker_info_mem_code = #{pu_maker_info_mem_code} and pu_maker_info_pro_no = #{pu_maker_info_pro_no} 
+	</update>
+	
+	<update id="submit" parameterType="totalProjectSubmit">
+		update project
+		set
+		pro_license = #{mInfo.pu_maker_info_license},
+		pro_cate = #{bInfo.pu_basic_info_cate},
+		pro_state = '검수',
+		pro_regdate = sysdate,
+		pro_endate = #{bInfo.pu_basic_info_end_date},
+		pro_target_amount = #{bInfo.pu_basic_info_target_amount},
+		pro_content = #{story.pu_story_proj_story_img},
+		pro_img = #{story.pu_story_intro_img},
+		pro_title = #{bInfo.pu_basic_info_proj_sub}
+		where 
+		pro_code = #{bReq.pu_basic_req_pro_no}
+	</update>
+	
+</mapper>

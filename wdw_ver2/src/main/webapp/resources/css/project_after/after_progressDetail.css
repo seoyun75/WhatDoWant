@@ -1,0 +1,188 @@
+@charset "UTF-8";
+
+/* @import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css); */
+
+div#container {
+    width: 1100px;
+    height: 800px;
+}
+
+/* body {
+    font-family: 'NanumSquare', sans-serif;
+} */
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+li{
+	width: 100px;
+	height: 50px;
+	list-style: none;
+	line-height: 50px;
+	text-align: center;
+}
+a{
+	text-decoration: none;
+	color: #000;
+}
+/* wrap */
+#wrap{
+	width: 1400px;
+	margin: 0 auto;
+}
+/* banner */
+#banner_wrap{
+	width: 100%;
+	height: 200px;
+	overflow: hidden;
+	position: relative;
+}
+#banner_wrap .banner_img img{
+	width: 100%;
+	height: 200px;
+}
+.banner_title{
+	z-index: 999;
+	position: absolute;
+	color: #fff;
+	font-size: 30px;
+	font-weight: bold;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+#container> div#regist{
+    width: 100%;
+    height: 800px;
+    margin: 0 auto;
+}
+#regist h4{
+    margin-top: 15px;
+    padding-left: 10px;
+    padding-bottom: 15px;
+    font-size: 20px;
+}
+.regist_kinds_select{
+    float: left;
+}
+.info_table{
+    margin-top: 0px;
+}
+.tbl_basic {
+    width:100%; 
+    border-top:2px solid #204d8d; 
+    margin-bottom:px; 
+    border-spacing:0;
+}
+.tbl_basic caption{
+    display: none;
+}
+.tbl_basic th {
+    background:#f3f3f3; 
+    color:#204d8d; 
+    border-bottom:1px solid #dfdfdf; 
+    border-left:1px solid #dfdfdf; 
+    font-weight:normal; 
+    padding:8px 0; 
+    vertical-align:middle; 
+    text-align:center;
+}
+.tbl_basic td {
+    border-bottom:1px solid #dfdfdf; 
+    border-left:1px solid #dfdfdf; 
+    vertical-align:middle; 
+    word-break:break-word; 
+    padding:3px 2%;
+}
+.tbl_basic .regist_bd_l {
+    border-left-color:transparent;
+}
+.mtit{
+    display: none;
+}
+.re_text_center {
+    text-align:center !important;
+    height: 90px;
+}
+.re_button_primary {
+    background-color: #00a8e6;
+    color:#fff
+}
+.re_button {
+    -webkit-appearance: none;
+    margin: 0;
+    border: none;
+    overflow: visible;
+    font: inherit;
+    color: #444;
+    text-transform: none;
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 0 12px;
+    background: #f5f5f5;
+    vertical-align: middle;
+    line-height: 28px;
+    min-height: 30px;
+    font-size: 1rem;
+    text-decoration: none;
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, .06);
+    border-radius: 4px;
+    text-shadow:0 1px 0 #fff
+}
+select {
+    width: 140px;
+    height: 25px;
+    font-size: 16px;
+}
+td{
+    height: 60px;
+}
+
+input[type="text"],textarea{
+    float: left;
+    width: 300px;
+}
+input[type="text"] {
+    height: 35px;
+    border-radius: 3px;
+    padding-left: 7px;
+    background-color: white;
+    
+}
+#textarea{
+    width: 800px;
+    height: 500px;
+    text-align: left;
+}
+#file_contents{
+    width: 100px;
+    height: 40px;
+}
+
+
+.button_last{
+    margin-top: 20px;
+    width: 100px;
+    height: 40px !important;
+    font-size: 16px;
+    border: 1px solid darkgray;
+    background-color: white;
+    border-radius: 4px;
+
+}
+.button_last:active{
+	background-color: #815b9c;
+	color: white;
+}
+.funding_container .navbar_main_info .funding_preparation{
+	overflow-y: hidden !important;
+}
+.funding_preparation_wrapper{
+	overflow: auto;
+}
+.funding_preparation_wrapper::-webkit-scrollbar{
+	display: none;
+}

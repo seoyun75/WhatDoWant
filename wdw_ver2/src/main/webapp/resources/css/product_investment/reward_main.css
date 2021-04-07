@@ -1,0 +1,341 @@
+@charset "UTF-8";
+
+.fund_menu{
+    text-align: center;
+    height: 80px;
+}
+
+.f_t_menu{
+    
+    margin: 0 auto;
+    width: 1280px;
+    height: 40px;
+    text-align: center;
+    display: block;
+    line-height: 40px;
+    font-weight: bold;
+    font-size: 30px;
+    color: #58247d;
+}
+
+.f_f_menu{
+	width: 100%;
+    height: 40px;
+    display: block;
+    line-height: 40px;
+    text-align: center;
+    font-weight: bold;
+    border-top: 1px solid #e6e6e6; 
+    
+}
+
+.f_f_menu #sp_wrap {
+    width: 1280px;
+    margin: 0 auto;
+}
+
+.f_f_menu #sp_wrap span{
+	display: inline-block;
+    width: 220px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: large;
+}
+
+.f_f_menu #now{
+	color: #58247d;
+}
+
+.f_f_menu .f_f_menu_li a{
+	color: #000;
+}
+
+.f_f_menu .f_f_menu_li a:hover{
+    color: #d6a8f7;
+    font-weight: bold;
+}
+
+#cate{	/* 카테고리  */
+	width: 1280px;
+    /* border-top: 1px solid #e6e6e6; */
+    height: 100px;
+    /* border-bottom: 1px solid #e6e6e6; */
+    margin: 0 auto;
+}
+
+#cate #cate_sec{
+	width: 1000px;
+	height: 100px;
+	margin: 0 auto;
+	
+}
+
+
+#cate_wrap{
+	width: 840px;
+	height: 100px;
+	overflow: hidden;
+	margin: 0 auto;
+}
+
+#cate .cate_list{
+	width: 840px;
+	height: 100px;
+}
+
+#cate .cate_list li{
+    width: 60px;
+    height: 60px;
+    border-radius: 100px;
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    margin: 20px 30px 0px 30px;
+    line-height: 60px;
+    font-size: small;
+    float: left;
+    text-align: center;
+    color: #000;
+    
+}
+#cate .cate_list li a {
+	color: #464646;
+}
+
+#all{
+	/* border: 1px solid #000; */
+    display: block;
+    width: 1280px;
+    height: 90%;
+    margin: 0 auto;    
+}
+
+.all_title{
+    float: left;
+    width: 10%;
+    font-size: 25px;
+    padding: 50px 10px 20px 20px;
+}
+
+.all_product{
+    float: left;
+    width: 100%;
+    margin-left: 88px;    
+}
+
+.all_product #li_t{
+	width: 300px;
+	height: 200px;
+	overflow: hidden;
+}
+
+
+.all_product #li_t a img {
+	display: inline-block;
+	width: 100%;
+}
+
+/* 상품 목록 하단 div */
+
+/* 후원 진행도 wrapper */
+#gage_wrapper{
+	position: relative;
+	background: #d9d4d0;
+    padding-bottom: 20px;
+    margin-bottom: 8px;	
+    top: -2px;
+}
+
+/* 후원 진행도 gage */
+#gage_bar {			/* 중간단계 */
+	position: absolute;
+	height: 20px;
+	
+	background: #815c9d;
+	text-align: right;
+}
+
+#gage_bar_full {	/* 완성 단계 */
+	/* width: 100%; */
+	height: 17px;
+	background: #5bf09b;
+	text-align: right;
+}
+
+#gage_bar_lower {	/* 저조 단계 */
+	/* width: 12%; */
+	height: 17px;
+	background: #f26f63;
+	text-align: right;
+}
+
+/* 후원 진행도 텍스트 */
+#gage_bar p {
+	line-height: 17px;
+	font-size: small;
+	font-weight: bold;
+	margin-right: 3px;
+	color: #fff;
+}
+
+#gage_bar_full p {
+	line-height: 17px;
+	font-size: small;
+	font-weight: bold;
+	margin-right: 3px;
+}
+
+#gage_bar_lower p {
+	line-height: 17px;
+	font-size: small;
+	font-weight: bold;
+	margin-right: 3px;
+}
+
+.all_product #li_f{
+	width: 300px;
+	height: 150px;
+}
+
+.all_product .product_subject{
+	width: 100%;
+	height: 65px;
+	margin: 10px 0 5px 5px;
+	border-bottom-style: inset;
+}
+
+/* 상품 텍스트 */
+.all_product #li_f .product_subject a p{
+	color: black;
+	font-weight: bold;
+	line-height: 20px;
+	text-align: left;
+	margin-left: 5px;
+}
+
+.all_product #li_f .product_info {
+	display: block;
+	height: 25px;
+	margin-right: 5px;
+}
+
+/* 상품 카테고리 텍스트 */
+.all_product #li_f .product_info p{
+	font-size: xx-small;
+	font-weight: bold;
+	color: #58247d;
+	line-height: 17px;
+	text-align: left;
+	margin-left: 5px;
+	padding-top: 4px;
+		
+}
+
+.all_product #li_f .product_content {
+	display: block;
+	height: 40px;
+}
+
+/* 상품 내용 텍스트 */
+.all_product #li_f .product_content p{
+	color: #000;
+	font-size: small;
+	line-height: 20px;
+	text-align: left;
+	margin-left: 5px;
+	padding-top: 0px;	
+}
+
+.all_product .product_progress {
+	width: 100%;
+	height: 40px;
+	float: left;
+}
+
+.all_product .product_progress #price{
+	width: 50%;
+	height: 30px;
+	text-align: left;
+	line-height: 22px;
+	margin-left: 5px;
+	float: left;
+}
+
+/* 상품 가격 텍스트 */
+.all_product .product_progress #price p{
+	color: #58247d;
+	font-weight: bold;
+}
+
+.all_product .product_progress #per{
+	height: 30px;
+	line-height: 22px;
+	float: left;
+	margin-right: 15px;
+	margin-left: 5px;
+}
+
+/* 상품 퍼센트 텍스트 */
+.all_product .product_progress #per p{
+	color: #58247d;
+	font-weight: bold;
+}
+
+.all_product .product_progress #day{
+	height: 22px;
+	line-height: 22px;
+	font-size: small;
+	float: right;
+	margin-left: 18px;
+	margin-right: 5px;
+}
+
+/* 상품 d-day 텍스트 */
+.all_product .product_progress #day p{
+	color: #c71e70;
+	font-weight: bold;
+}
+
+.all_product ul{
+	width: 1280px;
+	height: 4000px;
+}
+
+
+.all_product ul li {
+    width: 300px;
+    height: 360px;
+    margin: 30px 0 30px 50px;
+    background: #f2f2f2;
+    text-align: center;
+    color: #000;
+    float: left;
+}
+
+
+.all_product ul li:nth-child(4), 
+.all_product ul li:nth-child(7),
+.all_product ul li:nth-child(10),
+.all_product ul li:nth-child(13),
+.all_product ul li:nth-child(16),
+.all_product ul li:nth-child(19),
+.all_product ul li:nth-child(22),
+.all_product ul li:nth-child(25),
+.all_product ul li:nth-child(28),
+.all_product ul li:nth-child(31),
+.all_product ul li:nth-child(34),
+.all_product ul li:nth-child(37),
+.all_product ul li:nth-child(40){
+    clear: both;
+}
+
+
+#reward{
+	display: inline-block;
+    height: 100%;
+    width: 100%;
+}
+
+.footer{
+	margin-top: 30px !important;
+}
